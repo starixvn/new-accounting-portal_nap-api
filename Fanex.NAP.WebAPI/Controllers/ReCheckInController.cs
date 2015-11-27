@@ -32,14 +32,6 @@
         [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1305:FieldNamesMustNotUseHungarianNotation", Justification = "Reviewed.")]
         public int Get(int onUserId, int siteId)
         {
-            //// Down time checking
-            var maintenanceInfo = _maintenanceService.GetDowntimeInfo();
-
-            if (maintenanceInfo.IsDowntime)
-            {
-                return (int)Constant.ReCheckInResult.DownTime;
-            }
-
             //// Site Status Checking
             var siteStatus = _siteService.GetStatusById(siteId);
 
