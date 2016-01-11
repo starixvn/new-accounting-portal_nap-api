@@ -28,3 +28,4 @@ _ReSharper*/
 *.vssscc
 $tf*/
 Logs/
+.vs/config/applicationhost.config
