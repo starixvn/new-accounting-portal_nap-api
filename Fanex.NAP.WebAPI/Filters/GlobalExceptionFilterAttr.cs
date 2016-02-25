@@ -4,8 +4,10 @@
     using System.Data.SqlClient;
     using System.Net;
     using System.Net.Http;
+    using System.Reflection;
     using System.Text;
     using System.Web.Http.Filters;
+    using Enyim.Caching;
     using Fanex.Data;
     using Fanex.Logging;
     using Fanex.NAP.Core.Web;
@@ -14,6 +16,8 @@
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, Inherited = true, AllowMultiple = true)]
     public sealed class GlobalExceptionFilterAttr : ExceptionFilterAttribute
     {
+        private static readonly ILog Logger = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+
         public override void OnException(HttpActionExecutedContext actionExecutedContext)
         {
             if (actionExecutedContext != null)
@@ -30,7 +34,9 @@
 
                 LogDatabaseException(exception, messageBuilder);
 
-                LogService.Error(messageBuilder.ToString(), actionExecutedContext.Exception);
+                var message = messageBuilder.ToString();
+                LogService.Error(message, actionExecutedContext.Exception);
+                Logger.Info(message);
 
                 actionExecutedContext.Response = actionExecutedContext.Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ViewResources.System_Error);
             }
