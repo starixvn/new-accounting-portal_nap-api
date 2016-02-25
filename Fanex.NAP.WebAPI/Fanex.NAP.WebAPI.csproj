@@ -20,6 +20,7 @@
     <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
     <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -221,6 +222,9 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="WebConnectionString.backupMNL.config">
+      <DependentUpon>Web.ConnectionString.config</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -236,11 +240,12 @@
     </Content>
     <Content Include="Web.Pro.config">
       <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Web.ConnectionString.Uat.config">
       <DependentUpon>Web.ConnectionString.config</DependentUpon>
     </Content>
-	<Content Include="Web.ConnectionString.Sit.config">
+    <Content Include="Web.ConnectionString.Sit.config">
       <DependentUpon>Web.ConnectionString.config</DependentUpon>
     </Content>
     <Content Include="Web.ConnectionString.Local.config">
@@ -248,13 +253,17 @@
     </Content>
     <Content Include="Web.ConnectionString.Pro.config">
       <DependentUpon>Web.ConnectionString.config</DependentUpon>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Web.Uat.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-	<Content Include="Web.Sit.config">
+    <Content Include="Web.Sit.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <None Include="Web.backupMNL.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Fanex.NAP.Core\Fanex.NAP.Core.csproj">
