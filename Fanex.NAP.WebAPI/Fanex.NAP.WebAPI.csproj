@@ -222,9 +222,6 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="WebConnectionString.backupMNL.config">
-      <DependentUpon>Web.ConnectionString.config</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -264,6 +261,9 @@
     <Content Include="Web.backupMNL.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <None Include="Web.ConnectionString.backupMNL.config">
+      <DependentUpon>Web.ConnectionString.config</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Fanex.NAP.Core\Fanex.NAP.Core.csproj">
