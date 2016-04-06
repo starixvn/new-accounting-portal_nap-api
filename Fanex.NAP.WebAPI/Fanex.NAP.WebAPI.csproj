@@ -182,6 +182,7 @@
     <Compile Include="Controllers\LogoutController.cs" />
     <Compile Include="Controllers\SiteController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\UserInfoController.cs" />
     <Compile Include="Filters\GlobalExceptionFilterAttr.cs" />
     <Compile Include="Filters\LogInfoFilterAttr.cs" />
     <Compile Include="Filters\NAPAuthorizationFilter.cs" />
