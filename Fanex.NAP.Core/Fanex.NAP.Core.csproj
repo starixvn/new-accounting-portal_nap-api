@@ -102,10 +102,6 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="UMControllerLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\UMControllerLibrary.1.0.0.1\lib\net40\UMControllerLibrary.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business\Constant.cs" />
@@ -219,7 +215,6 @@
     <Compile Include="Properties\GlobalSuppressions.cs" />
     <Compile Include="Model\ValueObject\LogFunction.cs" />
     <Compile Include="Model\ValueObject\LogUserLogin.cs" />
-    <Compile Include="Model\ValueObject\Downtime.cs" />
     <Compile Include="Model\ValueObject\LogData.cs" />
     <Compile Include="Model\ValueObject\LogExecSp.cs" />
     <Compile Include="Model\ValueObject\SiteUrl.cs" />
@@ -248,7 +243,6 @@
     <Compile Include="Repository\Interface\ISiteRepository.cs" />
     <Compile Include="Repository\Interface\IUserRepository.cs" />
     <Compile Include="Service\Impl\TraceService.cs" />
-    <Compile Include="Service\Impl\MaintenanceService.cs" />
     <Compile Include="Service\Impl\FunctionService.cs" />
     <Compile Include="Service\Impl\GroupService.cs" />
     <Compile Include="Service\Impl\MenuItemService.cs" />
@@ -259,7 +253,6 @@
     <Compile Include="Service\Interface\ITraceService.cs" />
     <Compile Include="Service\Interface\IGroupService.cs" />
     <Compile Include="Service\Interface\IFunctionService.cs" />
-    <Compile Include="Service\Interface\IMaintenanceService.cs" />
     <Compile Include="Service\Interface\IMenuItemService.cs" />
     <Compile Include="Service\Interface\IBaseService.cs" />
     <Compile Include="Service\Interface\IServiceContext.cs" />
