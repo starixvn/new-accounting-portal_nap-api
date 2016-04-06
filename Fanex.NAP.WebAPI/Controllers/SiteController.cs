@@ -37,9 +37,9 @@
         }
 
         [HttpGet]
-        public IEnumerable<IMenuItem> MenuItem(int siteId, string enviroment, bool? isActive = null)
+        public IEnumerable<IMenuItem> MenuItem(int siteId, string environment, bool? isActive = null)
         {
-            return _menuItemService.GetBySite(siteId, enviroment, isActive);
+            return _menuItemService.GetBySite(siteId, environment, isActive);
         }
     }
 }
