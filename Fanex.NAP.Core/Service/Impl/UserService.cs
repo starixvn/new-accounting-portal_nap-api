@@ -386,7 +386,7 @@ namespace Fanex.NAP.Core.Service.Impl
         /// <returns>The command result.</returns>
         public ICommandResult ChangePassword(ICriteria criteria)
         {
-            throw new NotImplementedException();
+            return InsertOrUpdate(criteria);
         }
 
         /// <summary>
