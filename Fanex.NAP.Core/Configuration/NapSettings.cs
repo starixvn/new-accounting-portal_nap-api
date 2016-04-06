@@ -24,8 +24,6 @@ namespace Fanex.NAP.Core.Configuration
         private const string __ENABLE_DIRECT_LOGIN = "EnableDirectLogin";
         private const string __HUB_URL = "HubUrl";
         private const string __SITE_ID = "SiteId";
-        private const string __UM_ADDRESS = "UMAddress";
-        private const string __ENABLE_CHECK_UM = "EnableCheckUM";
         private const string __ENABLE_RECHECKIN = "EnableReCheckin";
         private const string __UNAUTHORIZE_URL = "UnauthorizeUrl";
         private const string __NAP_DOMAIN = "Domain";
@@ -94,33 +92,6 @@ namespace Fanex.NAP.Core.Configuration
             set { this[__ENVIRONMENT] = value; }
         }
 
-        [ConfigurationProperty(__UM_ADDRESS, IsRequired = true)]
-        public string UMAddress
-        {
-            get { return (string)this[__UM_ADDRESS]; }
-            set { this[__UM_ADDRESS] = value; }
-        }
-
-        public bool EnableCheckUM
-        {
-            get
-            {
-                var result = false;
-
-                if (!bool.TryParse(this._EnableCheckUM, out result))
-                {
-                    result = Equals(this._EnableCheckUM, "1");
-                }
-
-                return result;
-            }
-
-            set
-            {
-                this._EnableCheckUM = value.ToString();
-            }
-        }
-
         public bool EnableReCheckIn
         {
             get
@@ -173,13 +144,6 @@ namespace Fanex.NAP.Core.Configuration
         {
             get { return (string)this[__ENABLE_DIRECT_LOGIN]; }
             set { this[__ENABLE_DIRECT_LOGIN] = value; }
-        }
-
-        [ConfigurationProperty(__ENABLE_CHECK_UM, IsRequired = true)]
-        private string _EnableCheckUM
-        {
-            get { return (string)this[__ENABLE_CHECK_UM]; }
-            set { this[__ENABLE_CHECK_UM] = value; }
         }
 
         [ConfigurationProperty(__ENABLE_RECHECKIN, IsRequired = true)]
