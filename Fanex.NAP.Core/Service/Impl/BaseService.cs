@@ -16,10 +16,11 @@ namespace Fanex.NAP.Core.Service.Impl
     using Fanex.Data.Repository;
     using Fanex.NAP.Core.Criteria.Misc;
     using Fanex.NAP.Core.Service.Interface;
-
-    /// <summary>
-    /// Base service.
-    /// </summary>
+    using Web.Session;
+    using Web.Context;
+    using Configuration;/// <summary>
+                        /// Base service.
+                        /// </summary>
     public class BaseService : IBaseService
     {
         private readonly IDynamicRepository _dynamicRepository;
@@ -73,15 +74,17 @@ namespace Fanex.NAP.Core.Service.Impl
         /// <returns>Execute SP log criteria.</returns>
         public LogExecSpCriteria GetLogExecSpCriteria()
         {
-            Check.Argument.IsNotNull(this.ServiceContext, "ServiceContext");
+            var currentSession = new CurrentSession();
+            var currentContext = new CurrentContext();
 
             return new LogExecSpCriteria
             {
-                CurrentUserId = this.ServiceContext.UserId,
-                CurrentSiteId = this.ServiceContext.SiteId,
+                CurrentUserId = currentSession.UserId,
+                CurrentSiteId = NapSettings.Settings.SiteId,
                 LogDate = DateTime.Now,
-                LoginIp = this.ServiceContext.Ip
+                LoginIp = currentContext.IP
             };
+
         }
     }
 }
