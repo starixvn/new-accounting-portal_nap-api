@@ -10,21 +10,18 @@
     public class ReCheckInController : ApiController
     {
         private IUserService _userService;
-        private IMaintenanceService _maintenanceService;
         private ISiteService _siteService;
 
         public ReCheckInController()
-            : this(null, null, null)
+            : this(null, null)
         {
         }
 
         public ReCheckInController(
             IUserService userService,
-            IMaintenanceService maintenanceService,
             ISiteService siteService)
         {
             _userService = userService ?? new UserService();
-            _maintenanceService = maintenanceService ?? new MaintenanceService();
             _siteService = siteService ?? new SiteService();
         }
 
