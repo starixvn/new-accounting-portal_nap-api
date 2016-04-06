@@ -1,6 +1,5 @@
 ﻿namespace Fanex.NAP.WebAPI.Controllers
 {
-    using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Web.Http;
@@ -10,7 +9,9 @@
     using Fanex.NAP.Core.Service.Impl;
     using Fanex.NAP.Core.Service.Interface;
     using Fanex.NAP.WebAPI.Filters;
-
+    using Data.Repository;
+    using Core.Command;
+    using Core.Criteria.User;
     [NAPAuthorizationFilter]
     public class UserController : ApiController
     {
@@ -80,6 +81,13 @@
             var functionPolicy = _functionService.GetByUserAndSiteIncludeGroup(userId, siteId, environment);
 
             return functionPolicy.Any();
+        }
+
+        [HttpPost]
+        public bool InsertOrUpdate([FromBody]ICriteria criteria)
+        {
+            ICommandResult result = _userService.InsertOrUpdate(criteria);
+            return result.IsSuccessful;
         }
     }
 }
