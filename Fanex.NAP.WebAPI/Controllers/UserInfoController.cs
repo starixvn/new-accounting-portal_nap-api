@@ -2,10 +2,10 @@
 {
     using Core.Command;
     using Core.Criteria.User;
-    using Core.Domain;
-    using Core.Model;
     using Core.Service.Impl;
     using Core.Service.Interface;
+    using Core.Web.Session;
+    using System.Web;
     using System.Web.Http;
 
     public class UserInfoController : ApiController
@@ -19,7 +19,10 @@
 
         public UserInfoController(IUserService userService)
         {
-            _userService = userService ?? new UserService();
+            _userService = userService ?? new UserService()
+            {
+                ServiceContext = new ServiceContext()
+            };
         }
 
         [HttpPost]
@@ -30,8 +33,10 @@
         }
 
         [HttpPost]
-        public bool UpdateProfile([FromBody]UpdateCustCriteria criteria)
+        public bool UpdateProfile(int onUserId, [FromBody]UpdateCustCriteria criteria)
         {
+            _userService.ServiceContext.UserId = onUserId;
+
             var result = _userService.InsertOrUpdate(criteria);
             return result.IsSuccessful;
         }
