@@ -1,11 +1,11 @@
 ﻿namespace Fanex.NAP.WebAPI.Controllers
 {
     using Core.Command;
+    using Core.Configuration;
     using Core.Criteria.User;
     using Core.Service.Impl;
     using Core.Service.Interface;
-    using Core.Web.Session;
-    using System.Web;
+    using Core.Web.Context;
     using System.Web.Http;
 
     public class UserInfoController : ApiController
@@ -21,13 +21,15 @@
         {
             _userService = userService ?? new UserService()
             {
-                ServiceContext = new ServiceContext()
+                ServiceContext = InitServiceContext()
             };
         }
 
         [HttpPost]
-        public bool UpdatePassword([FromBody]UpdatePasswordCustCriteria criteria)
+        public bool UpdatePassword(int onUserId, [FromBody]UpdatePasswordCustCriteria criteria)
         {
+            _userService.ServiceContext.UserId = onUserId;
+
             ICommandResult result = _userService.ChangePassword(criteria);
             return result.IsSuccessful;
         }
@@ -39,6 +41,15 @@
 
             var result = _userService.InsertOrUpdate(criteria);
             return result.IsSuccessful;
+        }
+
+        private IServiceContext InitServiceContext()
+        {
+            IServiceContext serviceContext = new ServiceContext();
+            serviceContext.Ip = (new CurrentContext()).IP;
+            serviceContext.SiteId = NapSettings.Settings.SiteId;
+
+            return serviceContext;
         }
     }
 }
