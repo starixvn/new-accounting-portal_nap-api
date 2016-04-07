@@ -32,9 +32,9 @@
         }
 
         [HttpGet]
-        public IUser Get(int id)
+        public IUser Get(int userId)
         {
-            return _userService.GetById(id);
+            return _userService.GetById(userId);
         }
 
         [HttpGet]
