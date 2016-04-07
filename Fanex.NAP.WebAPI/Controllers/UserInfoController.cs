@@ -2,6 +2,8 @@
 {
     using Core.Command;
     using Core.Criteria.User;
+    using Core.Domain;
+    using Core.Model;
     using Core.Service.Impl;
     using Core.Service.Interface;
     using System.Web.Http;
@@ -27,5 +29,11 @@
             return result.IsSuccessful;
         }
 
+        [HttpPost]
+        public bool UpdateProfile([FromBody]UpdateCustCriteria criteria)
+        {
+            var result = _userService.InsertOrUpdate(criteria);
+            return result.IsSuccessful;
+        }
     }
 }
