@@ -34,11 +34,7 @@
 
                 LogDatabaseException(exception, messageBuilder);
 
-                var message = messageBuilder.ToString();
-                LogService.Error(message, actionExecutedContext.Exception);
-                Logger.Info(message);
-
-                actionExecutedContext.Response = actionExecutedContext.Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ViewResources.System_Error);
+                actionExecutedContext.Response = actionExecutedContext.Request.CreateErrorResponse(HttpStatusCode.InternalServerError, messageBuilder.ToString());
             }
         }
 
