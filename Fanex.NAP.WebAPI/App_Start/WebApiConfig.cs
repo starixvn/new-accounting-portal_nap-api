@@ -10,9 +10,8 @@
         public static void Register(HttpConfiguration config)
         {
             config.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional });
+                name: "ControllerAndAction",
+                routeTemplate: "api/{controller}/{action}");
 
             config.Routes.MapHttpRoute(
               name: "UserOneLevelNested",
@@ -27,8 +26,9 @@
              constraints: new { controller = "site" });
 
             config.Routes.MapHttpRoute(
-             name: "ControllerAndAction",
-             routeTemplate: "api/{controller}/{action}");
+                name: "DefaultApi",
+                routeTemplate: "api/{controller}/{id}",
+                defaults: new { id = RouteParameter.Optional });
 
             config.Filters.Add(new GlobalExceptionFilterAttr());
 
