@@ -9,8 +9,6 @@
     using System.Web.Http.Filters;
     using Enyim.Caching;
     using Fanex.Data;
-    using Fanex.Logging;
-    using Fanex.NAP.Core.Web;
     using Fanex.NAP.WebAPI.Extensions;
 
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, Inherited = true, AllowMultiple = true)]
