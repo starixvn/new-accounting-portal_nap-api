@@ -15,7 +15,7 @@ namespace Fanex.NAP.Core.Criteria.User
     /// Get user by username criteria.
     /// </summary>
     public class GetByUsernameUserCriteria : CriteriaBase
-    {       
+    {
         public string Username { get; set; }
 
         /// <summary>

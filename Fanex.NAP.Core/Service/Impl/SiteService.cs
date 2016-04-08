@@ -14,9 +14,6 @@
 
 namespace Fanex.NAP.Core.Service.Impl
 {
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Web.Mvc;
     using Fanex.Common.Helper;
     using Fanex.NAP.Core.Business;
     using Fanex.NAP.Core.Command;
@@ -30,6 +27,9 @@ namespace Fanex.NAP.Core.Service.Impl
     using Fanex.NAP.Core.Repository.Impl;
     using Fanex.NAP.Core.Repository.Interface;
     using Fanex.NAP.Core.Service.Interface;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Web.Mvc;
 
     /// <summary>
     /// Site service.
@@ -41,7 +41,7 @@ namespace Fanex.NAP.Core.Service.Impl
         private readonly ISiteRepository _siteRepository;
         private readonly IFunctionRepository _functionRepository;
 
-        #endregion
+        #endregion members
 
         #region ctors
 
@@ -56,7 +56,7 @@ namespace Fanex.NAP.Core.Service.Impl
             this._functionRepository = functionRepository ?? new FunctionRepository();
         }
 
-        #endregion
+        #endregion ctors
 
         #region get
 
@@ -259,11 +259,11 @@ namespace Fanex.NAP.Core.Service.Impl
                 if (siteList != null)
                 {
                     return siteList.Select(s => new SelectListItem
-                        {
-                            Text = s.Name,
-                            Value = s.Id.ToString(),
-                            Selected = s.Id == selectedSiteId
-                        }).ToList();
+                    {
+                        Text = s.Name,
+                        Value = s.Id.ToString(),
+                        Selected = s.Id == selectedSiteId
+                    }).ToList();
                 }
             }
 
@@ -385,7 +385,7 @@ namespace Fanex.NAP.Core.Service.Impl
             return null;
         }
 
-        #endregion
+        #endregion get
 
         #region insert/update
 
@@ -449,7 +449,7 @@ namespace Fanex.NAP.Core.Service.Impl
             return null;
         }
 
-        #endregion
+        #endregion insert/update
 
         #region SiteLevel services
 
@@ -478,7 +478,7 @@ namespace Fanex.NAP.Core.Service.Impl
             return null;
         }
 
-        #endregion
+        #endregion SiteLevel services
 
         #region SiteUrl services
 
@@ -639,6 +639,6 @@ namespace Fanex.NAP.Core.Service.Impl
             return null;
         }
 
-        #endregion
+        #endregion SiteUrl services
     }
 }

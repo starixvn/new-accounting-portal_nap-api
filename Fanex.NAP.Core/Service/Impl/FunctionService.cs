@@ -11,10 +11,6 @@
 
 namespace Fanex.NAP.Core.Service.Impl
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Web.Mvc;
     using Fanex.Common.Helper;
     using Fanex.NAP.Core.Business;
     using Fanex.NAP.Core.Command;
@@ -26,6 +22,10 @@ namespace Fanex.NAP.Core.Service.Impl
     using Fanex.NAP.Core.Repository.Impl;
     using Fanex.NAP.Core.Repository.Interface;
     using Fanex.NAP.Core.Service.Interface;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Web.Mvc;
 
     /// <summary>
     /// Function service.
@@ -45,7 +45,7 @@ namespace Fanex.NAP.Core.Service.Impl
             this._functionRepository = functionRepository ?? new FunctionRepository();
         }
 
-        #endregion
+        #endregion Ctors
 
         #region Gets Function
 
@@ -124,7 +124,7 @@ namespace Fanex.NAP.Core.Service.Impl
             return null;
         }
 
-        #endregion
+        #endregion Gets Function
 
         #region Get Functions
 
@@ -237,7 +237,7 @@ namespace Fanex.NAP.Core.Service.Impl
         public IList<SelectListItem> GetSelectListItemBySite(
             int siteId,
             string env = Constant.Uat,
-            bool? isActive = null, 
+            bool? isActive = null,
             int selectedFunctionId = 0)
         {
             // check parameters
@@ -330,7 +330,7 @@ namespace Fanex.NAP.Core.Service.Impl
         /// <param name="isActive">Is active or not.</param>
         /// <returns>The list of function.</returns>
         public IEnumerable<IFunction> Search(
-            string functionName, 
+            string functionName,
             int siteId,
             string env = Constant.Uat,
             bool? isActive = null)
@@ -358,7 +358,7 @@ namespace Fanex.NAP.Core.Service.Impl
             return null;
         }
 
-        #endregion
+        #endregion Get Functions
 
         #region Gets Function Policy
 
@@ -624,7 +624,7 @@ namespace Fanex.NAP.Core.Service.Impl
             return null;
         }
 
-        #endregion
+        #endregion Gets Function Policy
 
         /// <summary>
         /// Check user function policy.

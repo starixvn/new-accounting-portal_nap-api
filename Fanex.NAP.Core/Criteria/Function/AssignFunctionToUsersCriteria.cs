@@ -9,10 +9,10 @@
 
 namespace Fanex.NAP.Core.Criteria.Function
 {
+    using Fanex.Data.Repository;
     using System;
     using System.Collections.Generic;
     using System.Text;
-    using Fanex.Data.Repository;
 
     /// <summary>
     /// Assign function to user criteria.

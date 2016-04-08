@@ -9,15 +9,15 @@
 
 namespace Fanex.NAP.Core.Web.Attribute
 {
-    using System;
-    using System.Web;
-    using System.Web.Mvc;
-    using System.Web.Security;
     using Fanex.NAP.Core.Business;
     using Fanex.NAP.Core.Configuration;
     using Fanex.NAP.Core.Service.Impl;
     using Fanex.NAP.Core.Service.Interface;
     using Fanex.NAP.Core.Web.Auth;
+    using System;
+    using System.Web;
+    using System.Web.Mvc;
+    using System.Web.Security;
 
     /// <summary>
     /// <see cref="http://www.hanselman.com/blog/SystemThreadingThreadCurrentPrincipalVsSystemWebHttpContextCurrentUserOrWhyFormsAuthenticationCanBeSubtle.aspx"/>

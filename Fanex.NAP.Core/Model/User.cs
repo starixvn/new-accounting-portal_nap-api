@@ -10,10 +10,10 @@
 
 namespace Fanex.NAP.Core.Model
 {
-    using System;
-    using System.ComponentModel.DataAnnotations;
     using Fanex.NAP.Core.Domain;
     using Fanex.NAP.Core.Web;
+    using System;
+    using System.ComponentModel.DataAnnotations;
 
     /// <summary>
     /// User model.

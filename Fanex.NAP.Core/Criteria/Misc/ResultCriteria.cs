@@ -21,7 +21,7 @@ namespace Fanex.NAP.Core.Criteria.Misc
             this.ErrCode = 0;
             this.ErrMsg = string.Empty;
         }
-        
+
         public int ErrCode { get; set; }
 
         public string ErrMsg { get; set; }

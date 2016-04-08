@@ -13,7 +13,6 @@ using System.Diagnostics.CodeAnalysis;
     Target = "Fanex.NAP.Core.Criteria.Function",
     MessageId = "Function",
     Justification = "Reviewed.")]
-
 [module: SuppressMessage(
     "Microsoft.Naming",
     "CA1716:IdentifiersShouldNotMatchKeywords",
@@ -21,7 +20,6 @@ using System.Diagnostics.CodeAnalysis;
     Target = "Fanex.NAP.Core.Repository.Interface",
     MessageId = "Interface",
     Justification = "Reviewed.")]
-
 [module: SuppressMessage(
     "Microsoft.Naming",
     "CA1716:IdentifiersShouldNotMatchKeywords",
@@ -29,7 +27,6 @@ using System.Diagnostics.CodeAnalysis;
     Target = "Fanex.NAP.Core.Service.Interface",
     MessageId = "Interface",
     Justification = "Reviewed.")]
-
 [module: SuppressMessage(
     "Microsoft.Naming",
     "CA1701:ResourceStringCompoundWordsShouldBeCasedCorrectly",

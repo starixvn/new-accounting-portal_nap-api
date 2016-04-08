@@ -9,13 +9,13 @@
 
 namespace Fanex.NAP.Core.Web.Context
 {
+    using Fanex.Common.Extensions;
+    using Fanex.NAP.Core.Configuration;
     using System;
     using System.Diagnostics.CodeAnalysis;
     using System.Globalization;
     using System.Net;
     using System.Web;
-    using Fanex.Common.Extensions;
-    using Fanex.NAP.Core.Configuration;
 
     /// <summary>
     /// Current context.

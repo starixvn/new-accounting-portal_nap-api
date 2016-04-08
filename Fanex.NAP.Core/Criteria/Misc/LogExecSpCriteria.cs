@@ -9,8 +9,8 @@
 
 namespace Fanex.NAP.Core.Criteria.Misc
 {
-    using System;
     using Fanex.Data.Repository;
+    using System;
 
     /// <summary>
     /// Execute SP log criteria.

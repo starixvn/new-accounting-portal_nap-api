@@ -9,10 +9,10 @@
 
 namespace Fanex.NAP.Core.Model
 {
-    using System;
-    using System.Diagnostics.CodeAnalysis;
     using Fanex.NAP.Core.Business;
     using Fanex.NAP.Core.Domain;
+    using System;
+    using System.Diagnostics.CodeAnalysis;
 
     /// <summary>
     /// Function model.

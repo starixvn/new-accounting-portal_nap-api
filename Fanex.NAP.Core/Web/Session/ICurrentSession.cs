@@ -9,8 +9,8 @@
 
 namespace Fanex.NAP.Core.Web.Session
 {
-    using System.Collections.Generic;
     using Fanex.NAP.Core.Model;
+    using System.Collections.Generic;
 
     public interface ICurrentSession
     {

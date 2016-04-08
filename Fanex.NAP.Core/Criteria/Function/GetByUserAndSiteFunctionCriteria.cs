@@ -19,7 +19,7 @@ namespace Fanex.NAP.Core.Criteria.Function
         public int UserId { get; set; }
 
         public int SiteId { get; set; }
-        
+
         public string Environment { get; set; }
 
         /// <summary>

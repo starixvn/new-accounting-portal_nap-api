@@ -17,7 +17,7 @@ namespace Fanex.NAP.Core.Criteria.Site
     public class GetSiteUrlBySiteIdCriteria : CriteriaBase
     {
         public int SiteId { get; set; }
-        
+
         public string Environment { get; set; }
 
         /// <summary>

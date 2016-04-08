@@ -9,10 +9,10 @@
 
 namespace Fanex.NAP.Core.Criteria.User
 {
-    using System.ComponentModel.DataAnnotations;
-    using System.Web.Mvc;
     using Fanex.Data.Repository;
     using Fanex.NAP.Core.Web;
+    using System.ComponentModel.DataAnnotations;
+    using System.Web.Mvc;
 
     /// <summary>
     /// Reset customer password criteria.

@@ -9,11 +9,6 @@
 
 namespace Fanex.NAP.Core.Service.Impl
 {
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Web.Mvc;
     using Fanex.Common.Helper;
     using Fanex.Data.Repository;
     using Fanex.NAP.Core.Business;
@@ -26,6 +21,11 @@ namespace Fanex.NAP.Core.Service.Impl
     using Fanex.NAP.Core.Repository.Impl;
     using Fanex.NAP.Core.Repository.Interface;
     using Fanex.NAP.Core.Service.Interface;
+    using System;
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Web.Mvc;
 
     /// <summary>
     /// User service.

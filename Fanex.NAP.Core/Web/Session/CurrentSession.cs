@@ -9,11 +9,11 @@
 
 namespace Fanex.NAP.Core.Web.Session
 {
+    using Fanex.NAP.Core.Configuration;
+    using Fanex.NAP.Core.Model;
     using System;
     using System.Collections.Generic;
     using System.Web;
-    using Fanex.NAP.Core.Configuration;
-    using Fanex.NAP.Core.Model;
 
     /// <summary>
     /// Current session.
@@ -34,7 +34,7 @@ namespace Fanex.NAP.Core.Web.Session
 
         public const string InternalMenuItemList = "InternalMenuItemList";
 
-        #endregion Constants
+        #endregion const
 
         private int _siteId = NapSettings.Settings.SiteId;
 

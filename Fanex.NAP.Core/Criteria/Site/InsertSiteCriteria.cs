@@ -9,13 +9,13 @@
 
 namespace Fanex.NAP.Core.Criteria.Site
 {
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.Text;
     using Fanex.Data.Repository;
     using Fanex.NAP.Core.Business;
     using Fanex.NAP.Core.Model.ValueObject;
     using Fanex.NAP.Core.Web;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.Text;
 
     /// <summary>
     /// Insert new site criteria.

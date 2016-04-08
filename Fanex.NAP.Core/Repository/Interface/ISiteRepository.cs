@@ -10,12 +10,12 @@
 
 namespace Fanex.NAP.Core.Repository.Interface
 {
-    using System.Collections.Generic;
     using Fanex.Data.Repository;
     using Fanex.NAP.Core.Command;
     using Fanex.NAP.Core.Criteria.Site;
     using Fanex.NAP.Core.Domain;
     using Fanex.NAP.Core.Model.ValueObject;
+    using System.Collections.Generic;
 
     public interface ISiteRepository : IReadonlyRepository<ISite>
     {

@@ -1,14 +1,14 @@
 ﻿namespace Fanex.NAP.WebAPI.Controllers
 {
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Web.Http;
     using Fanex.NAP.Core.Domain;
     using Fanex.NAP.Core.Model;
     using Fanex.NAP.Core.Model.ValueObject;
     using Fanex.NAP.Core.Service.Impl;
     using Fanex.NAP.Core.Service.Interface;
     using Fanex.NAP.WebAPI.Filters;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Web.Http;
 
     [NAPAuthorizationFilter]
     public class UserController : ApiController
@@ -80,7 +80,5 @@
 
             return functionPolicy.Any();
         }
-
-  
     }
 }

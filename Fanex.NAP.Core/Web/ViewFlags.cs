@@ -29,7 +29,7 @@ namespace Fanex.NAP.Core.Web
             this.IsShowActionColumn = false;
             this.IsReCheckin = false;
         }
-        
+
         public bool IsLive { get; set; }
 
         public bool HasEditRight { get; set; }

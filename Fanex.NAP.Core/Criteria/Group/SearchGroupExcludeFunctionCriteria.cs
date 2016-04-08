@@ -17,7 +17,7 @@ namespace Fanex.NAP.Core.Criteria.Group
     public class SearchGroupExcludeFunctionCriteria : CriteriaBase
     {
         public string GroupName { get; set; }
-      
+
         public int SiteId { get; set; }
 
         public int FunctionId { get; set; }

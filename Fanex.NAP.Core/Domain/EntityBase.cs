@@ -9,8 +9,6 @@
 
 namespace Fanex.NAP.Core.Domain
 {
-    using System;
-
     /// <summary>
     /// Base entity.
     /// </summary>

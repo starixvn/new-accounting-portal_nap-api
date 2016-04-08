@@ -15,11 +15,11 @@ namespace Fanex.NAP.Core.Criteria.User
     /// Search user exclude function criteria.
     /// </summary>
     public class SearchUserExcludeFunctionCriteria : CriteriaBase
-    {       
+    {
         public string Username { get; set; }
-        
+
         public int GroupId { get; set; }
-       
+
         public int SiteId { get; set; }
 
         public int FunctionId { get; set; }

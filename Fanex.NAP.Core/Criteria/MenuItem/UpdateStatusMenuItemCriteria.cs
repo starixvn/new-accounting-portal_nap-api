@@ -9,8 +9,8 @@
 
 namespace Fanex.NAP.Core.Criteria.MenuItem
 {
-    using System;
     using Fanex.Data.Repository;
+    using System;
 
     /// <summary>
     /// Update menu item status criteria.

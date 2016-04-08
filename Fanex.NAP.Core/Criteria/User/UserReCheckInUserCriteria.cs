@@ -15,7 +15,7 @@ namespace Fanex.NAP.Core.Criteria.User
     /// Re-check in user criteria.
     /// </summary>
     public class UserReCheckInUserCriteria : CriteriaBase
-    {       
+    {
         public int OnUserId { get; set; }
 
         public bool IsKickedOut { get; set; }

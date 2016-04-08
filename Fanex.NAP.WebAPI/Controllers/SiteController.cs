@@ -1,12 +1,13 @@
 ﻿namespace Fanex.NAP.WebAPI.Controllers
 {
-    using System.Collections.Generic;
-    using System.Web.Http;
+    using Core.Domain;
     using Fanex.NAP.Core.Model.ValueObject;
     using Fanex.NAP.Core.Service.Impl;
     using Fanex.NAP.Core.Service.Interface;
     using Fanex.NAP.WebAPI.Filters;
-    using Core.Domain;
+    using System.Collections.Generic;
+    using System.Web.Http;
+
     [NAPAuthorizationFilter]
     public class SiteController : ApiController
     {

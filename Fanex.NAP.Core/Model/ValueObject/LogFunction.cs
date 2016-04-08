@@ -17,7 +17,7 @@ namespace Fanex.NAP.Core.Model.ValueObject
     public class LogFunction
     {
         public int Id { get; set; }
-               
+
         public string IP { get; set; }
 
         public DateTime LogDate { get; set; }

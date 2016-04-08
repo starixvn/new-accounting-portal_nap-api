@@ -100,7 +100,7 @@ namespace Fanex.NAP.Core.Configuration
         protected override object GetElementKey(ConfigurationElement element)
         {
             var domainElement = element as DomainElement;
-            
+
             return domainElement.Name + domainElement.Path;
         }
     }

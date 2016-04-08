@@ -9,8 +9,8 @@
 
 namespace Fanex.NAP.Core.Criteria.Function
 {
-    using System;
     using Fanex.Data.Repository;
+    using System;
 
     /// <summary>
     /// Update function status criteria.

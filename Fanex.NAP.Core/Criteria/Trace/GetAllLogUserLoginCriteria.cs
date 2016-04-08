@@ -9,10 +9,10 @@
 
 namespace Fanex.NAP.Core.Criteria.Trace
 {
-    using System;
-    using System.ComponentModel.DataAnnotations;
     using Fanex.Data.Repository;
     using Fanex.NAP.Core.Web;
+    using System;
+    using System.ComponentModel.DataAnnotations;
 
     /// <summary>
     /// Get all log user login criteria.

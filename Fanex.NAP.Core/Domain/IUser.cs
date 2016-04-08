@@ -9,9 +9,9 @@
 
 namespace Fanex.NAP.Core.Domain
 {
+    using Fanex.NAP.Core.Web;
     using System;
     using System.ComponentModel.DataAnnotations;
-    using Fanex.NAP.Core.Web;
 
     public interface IUser : IEntity<int, string>
     {

@@ -9,7 +9,6 @@
 
 namespace Fanex.NAP.Core.Model.ValueObject
 {
-    using System;
     using System.Diagnostics.CodeAnalysis;
 
     /// <summary>

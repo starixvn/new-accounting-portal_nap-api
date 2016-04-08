@@ -9,16 +9,16 @@
 
 namespace Fanex.NAP.Core.Service.Impl
 {
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Diagnostics.CodeAnalysis;
-    using System.Linq;
-    using System.Xml.Linq;
     using Fanex.NAP.Core.Criteria.Trace;
     using Fanex.NAP.Core.Model.ValueObject;
     using Fanex.NAP.Core.Repository.Impl;
     using Fanex.NAP.Core.Repository.Interface;
     using Fanex.NAP.Core.Service.Interface;
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
+    using System.Linq;
+    using System.Xml.Linq;
 
     /// <summary>
     /// Trace service.

@@ -17,9 +17,9 @@ namespace Fanex.NAP.Core.Criteria.Site
     public class GetByUserSiteCriteria : CriteriaBase
     {
         public int UserId { get; set; }
-        
+
         public string Environment { get; set; }
-                
+
         public bool? IsActive { get; set; }
 
         /// <summary>

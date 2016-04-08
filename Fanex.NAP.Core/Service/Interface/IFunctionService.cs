@@ -10,26 +10,26 @@
 
 namespace Fanex.NAP.Core.Service.Interface
 {
-    using System.Collections.Generic;
-    using System.Diagnostics.CodeAnalysis;
-    using System.Web.Mvc;
     using Fanex.NAP.Core.Business;
     using Fanex.NAP.Core.Command;
     using Fanex.NAP.Core.Criteria.Function;
     using Fanex.NAP.Core.Domain;
     using Fanex.NAP.Core.Model.ValueObject;
+    using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
+    using System.Web.Mvc;
 
     public interface IFunctionService : IBaseService
     {
         #region Gets Function
-        
+
         IFunction GetById(int id);
 
         IFunction GetByNameAndSite(string name, int siteId);
 
         IFunction GetByKeyAndSite(string key, int siteId);
 
-        #endregion
+        #endregion Gets Function
 
         #region Gets Functions
 
@@ -54,10 +54,10 @@ namespace Fanex.NAP.Core.Service.Interface
 
         IEnumerable<IFunction> GetByParentKeyAndSite(GetByParentKeyAndSiteCriteria criteria);
 
-        #endregion
+        #endregion Gets Functions
 
         #region Gets Functions Policy
-        
+
         IEnumerable<FunctionPolicy> GetByUser(int userId, string env = Constant.Uat);
 
         [SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Justification = "Reviewed")]
@@ -75,11 +75,11 @@ namespace Fanex.NAP.Core.Service.Interface
         IEnumerable<FunctionPolicy> GetByUserAndSiteIncludeGroup(int userId, int siteId, string env = Constant.Uat);
 
         IEnumerable<FunctionPolicy> GetByUserAndFunctionKeyIncludeGroup(
-            int userId, 
+            int userId,
             string functionKey,
             string env = Constant.Uat);
 
-        #endregion
+        #endregion Gets Functions Policy
 
         bool CheckUserFunctionPolicy(int userId, int functionId, int policy);
 

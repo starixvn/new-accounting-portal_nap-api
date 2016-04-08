@@ -17,7 +17,7 @@ namespace Fanex.NAP.Core.Criteria.Function
     public class GetBySiteFunctionCriteria : CriteriaBase
     {
         public int SiteId { get; set; }
-        
+
         public string Environment { get; set; }
 
         public bool? IsActive { get; set; }

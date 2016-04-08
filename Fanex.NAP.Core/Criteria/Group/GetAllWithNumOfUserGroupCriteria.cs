@@ -9,9 +9,9 @@
 
 namespace Fanex.NAP.Core.Criteria.Group
 {
-    using System.ComponentModel.DataAnnotations;
     using Fanex.Data.Repository;
     using Fanex.NAP.Core.Web;
+    using System.ComponentModel.DataAnnotations;
 
     /// <summary>
     /// Get all group with number of user criteria.
@@ -19,7 +19,7 @@ namespace Fanex.NAP.Core.Criteria.Group
     public class GetAllWithNumOfUserGroupCriteria : CriteriaBase
     {
         public bool? IsActive { get; set; }
-       
+
         [Display(Name = "Group_Name", ResourceType = typeof(ViewResources))]
         [StringLength(50, MinimumLength = 0,
             ErrorMessageResourceName = "InputLengthValidationMsg",

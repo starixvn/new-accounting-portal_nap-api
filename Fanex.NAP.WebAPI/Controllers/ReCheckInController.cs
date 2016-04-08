@@ -1,11 +1,11 @@
 ﻿namespace Fanex.NAP.WebAPI.Controllers
 {
-    using System.Diagnostics.CodeAnalysis;
-    using System.Web.Http;
     using Fanex.NAP.Core.Business;
     using Fanex.NAP.Core.Criteria.User;
     using Fanex.NAP.Core.Service.Impl;
     using Fanex.NAP.Core.Service.Interface;
+    using System.Diagnostics.CodeAnalysis;
+    using System.Web.Http;
 
     public class ReCheckInController : ApiController
     {

@@ -10,11 +10,11 @@
 
 namespace Fanex.NAP.Core.Criteria.MenuItem
 {
+    using Fanex.Data.Repository;
+    using Fanex.NAP.Core.Web;
     using System;
     using System.ComponentModel.DataAnnotations;
     using System.Diagnostics.CodeAnalysis;
-    using Fanex.Data.Repository;
-    using Fanex.NAP.Core.Web;
 
     /// <summary>
     /// Update menu item criteria.

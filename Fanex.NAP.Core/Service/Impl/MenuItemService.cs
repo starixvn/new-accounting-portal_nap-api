@@ -10,9 +10,6 @@
 
 namespace Fanex.NAP.Core.Service.Impl
 {
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Web.Mvc;
     using Fanex.Common.Helper;
     using Fanex.NAP.Core.Business;
     using Fanex.NAP.Core.Command;
@@ -22,6 +19,9 @@ namespace Fanex.NAP.Core.Service.Impl
     using Fanex.NAP.Core.Repository.Impl;
     using Fanex.NAP.Core.Repository.Interface;
     using Fanex.NAP.Core.Service.Interface;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Web.Mvc;
 
     /// <summary>
     /// Menu item service.
@@ -142,11 +142,11 @@ namespace Fanex.NAP.Core.Service.Impl
                 if (menuItemList != null)
                 {
                     return menuItemList.Select(s => new SelectListItem
-                        {
-                            Text = s.Name,
-                            Value = s.Id.ToString(),
-                            Selected = s.Id == selectedMenuItemId
-                        }).ToList();
+                    {
+                        Text = s.Name,
+                        Value = s.Id.ToString(),
+                        Selected = s.Id == selectedMenuItemId
+                    }).ToList();
                 }
             }
 
@@ -213,11 +213,11 @@ namespace Fanex.NAP.Core.Service.Impl
                 if (menuItemList != null)
                 {
                     return menuItemList.Select(s => new SelectListItem
-                        {
-                            Text = s.Name,
-                            Value = s.Id.ToString(),
-                            Selected = s.Id == selectedMenuItemId
-                        }).ToList();
+                    {
+                        Text = s.Name,
+                        Value = s.Id.ToString(),
+                        Selected = s.Id == selectedMenuItemId
+                    }).ToList();
                 }
             }
 
@@ -287,8 +287,8 @@ namespace Fanex.NAP.Core.Service.Impl
         /// <param name="env">The environment.</param>
         /// <returns>The list of select list item.</returns>
         public IList<SelectListItem> GetParentSelectListItemById(
-            int id, 
-            int selectedMenuItemId = 0, 
+            int id,
+            int selectedMenuItemId = 0,
             string env = Constant.Uat)
         {
             // check parameters
@@ -307,11 +307,11 @@ namespace Fanex.NAP.Core.Service.Impl
                 if (menuItemList != null)
                 {
                     return menuItemList.Select(s => new SelectListItem
-                        {
-                            Text = s.Name,
-                            Value = s.Id.ToString(),
-                            Selected = s.Id == selectedMenuItemId
-                        }).ToList();
+                    {
+                        Text = s.Name,
+                        Value = s.Id.ToString(),
+                        Selected = s.Id == selectedMenuItemId
+                    }).ToList();
                 }
             }
 

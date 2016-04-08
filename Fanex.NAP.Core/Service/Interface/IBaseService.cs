@@ -10,10 +10,10 @@
 
 namespace Fanex.NAP.Core.Service.Interface
 {
-    using System.Collections.Generic;
-    using System.Diagnostics.CodeAnalysis;
     using Fanex.Data.Repository;
     using Fanex.NAP.Core.Criteria.Misc;
+    using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
 
     public interface IBaseService
     {

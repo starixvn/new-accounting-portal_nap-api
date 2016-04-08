@@ -10,12 +10,12 @@
 
 namespace Fanex.NAP.Core.Service.Impl
 {
-    using System;
-    using System.Collections.Generic;
     using Fanex.Common.Helper;
     using Fanex.Data.Repository;
     using Fanex.NAP.Core.Criteria.Misc;
     using Fanex.NAP.Core.Service.Interface;
+    using System;
+    using System.Collections.Generic;
 
     /// <summary>
     /// Base service.

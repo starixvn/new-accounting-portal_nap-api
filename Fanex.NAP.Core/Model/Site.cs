@@ -10,8 +10,8 @@
 
 namespace Fanex.NAP.Core.Model
 {
-    using System;
     using Fanex.NAP.Core.Domain;
+    using System;
 
     /// <summary>
     /// Site model.

@@ -9,10 +9,10 @@
 
 namespace Fanex.NAP.Core.Repository.Impl
 {
-    using System;
-    using System.Collections;
     using Fanex.Data.Repository;
     using Fanex.NAP.Core.Command;
+    using System;
+    using System.Collections;
 
     /// <summary>
     /// Repository base.
@@ -35,6 +35,6 @@ namespace Fanex.NAP.Core.Repository.Impl
                 Code = (errCode is DBNull) ? 0 : Convert.ToInt32(errCode),
                 Message = (errMsg is DBNull) ? string.Empty : Convert.ToString(errMsg)
             };
-        }       
+        }
     }
 }

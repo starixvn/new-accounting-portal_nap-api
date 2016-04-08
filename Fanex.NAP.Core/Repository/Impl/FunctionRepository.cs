@@ -10,11 +10,6 @@
 
 namespace Fanex.NAP.Core.Repository.Impl
 {
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Diagnostics.CodeAnalysis;
-    using System.Linq;
     using Fanex.Common.Extensions;
     using Fanex.Data;
     using Fanex.Data.Repository;
@@ -25,6 +20,11 @@ namespace Fanex.NAP.Core.Repository.Impl
     using Fanex.NAP.Core.Model;
     using Fanex.NAP.Core.Model.ValueObject;
     using Fanex.NAP.Core.Repository.Interface;
+    using System;
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
+    using System.Linq;
 
     /// <summary>
     /// Function repository.

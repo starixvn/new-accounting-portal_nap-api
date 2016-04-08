@@ -24,9 +24,9 @@ namespace Fanex.NAP.Core.Web.Auth
 
         public int UserId
         {
-            get 
-            { 
-                return this._userId; 
+            get
+            {
+                return this._userId;
             }
 
             set
@@ -42,9 +42,9 @@ namespace Fanex.NAP.Core.Web.Auth
 
         public int OnUserId
         {
-            get 
+            get
             {
-                return this._onuserId; 
+                return this._onuserId;
             }
 
             set

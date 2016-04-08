@@ -14,13 +14,13 @@
 
 namespace Fanex.NAP.Core.Service.Interface
 {
-    using System.Collections.Generic;
-    using System.Web.Mvc;
     using Fanex.NAP.Core.Business;
     using Fanex.NAP.Core.Command;
     using Fanex.NAP.Core.Criteria.Site;
     using Fanex.NAP.Core.Domain;
     using Fanex.NAP.Core.Model.ValueObject;
+    using System.Collections.Generic;
+    using System.Web.Mvc;
 
     public interface ISiteService : IBaseService
     {
@@ -42,7 +42,7 @@ namespace Fanex.NAP.Core.Service.Interface
 
         IList<SelectListItem> GetAllSelectListItem(
             string env = Constant.Uat,
-            bool? isActive = null, 
+            bool? isActive = null,
             int selectedSiteId = 0);
 
         IEnumerable<ISite> GetAllWithNumOfUsers(string env = Constant.Uat, bool? isActive = null);
@@ -54,7 +54,7 @@ namespace Fanex.NAP.Core.Service.Interface
             Constant.Policy policy = Constant.Policy.Read);
 
         IList<SelectListItem> GetSelectListItemByUserAndFunctionKeyIncludeGroup(
-            int userId, 
+            int userId,
             string functionKey,
             string env = Constant.Uat,
             Constant.Policy policy = Constant.Policy.Read,
@@ -82,6 +82,6 @@ namespace Fanex.NAP.Core.Service.Interface
 
         ICommandResult InsertSiteUrl(InsertSiteUrlCriteria criteria);
 
-        #endregion
+        #endregion SiteUrl services
     }
 }

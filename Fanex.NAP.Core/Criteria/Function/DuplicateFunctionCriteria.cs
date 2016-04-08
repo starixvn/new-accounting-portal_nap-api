@@ -9,11 +9,11 @@
 
 namespace Fanex.NAP.Core.Criteria.Function
 {
-    using System;
-    using System.ComponentModel.DataAnnotations;
     using Fanex.Data.Repository;
     using Fanex.NAP.Core.Business;
     using Fanex.NAP.Core.Web;
+    using System;
+    using System.ComponentModel.DataAnnotations;
 
     /// <summary>
     /// Duplicate function criteria.
@@ -24,7 +24,7 @@ namespace Fanex.NAP.Core.Criteria.Function
         {
             this.Environment = Constant.Uat;
         }
-        
+
         public int DuplicateFunctionId { get; set; }
 
         public int FunctionId { get; set; }

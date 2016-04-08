@@ -15,7 +15,7 @@ namespace Fanex.NAP.Core.Criteria.User
     /// Logout user criteria.
     /// </summary>
     public class LogOutUserCriteria : CriteriaBase
-    {       
+    {
         public int OnUserId { get; set; }
 
         /// <summary>

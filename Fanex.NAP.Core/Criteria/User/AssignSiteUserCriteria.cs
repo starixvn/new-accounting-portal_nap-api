@@ -9,8 +9,8 @@
 
 namespace Fanex.NAP.Core.Criteria.User
 {
-    using System;
     using Fanex.Data.Repository;
+    using System;
 
     /// <summary>
     /// Assign site to user criteria.

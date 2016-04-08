@@ -9,10 +9,10 @@
 
 namespace Fanex.NAP.Core.Criteria.Group
 {
-    using System;
-    using System.ComponentModel.DataAnnotations;
     using Fanex.Data.Repository;
     using Fanex.NAP.Core.Web;
+    using System;
+    using System.ComponentModel.DataAnnotations;
 
     /// <summary>
     /// Update group criteria.

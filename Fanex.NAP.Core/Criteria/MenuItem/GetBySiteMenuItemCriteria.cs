@@ -9,9 +9,9 @@
 
 namespace Fanex.NAP.Core.Criteria.MenuItem
 {
-    using System.ComponentModel.DataAnnotations;
     using Fanex.Data.Repository;
     using Fanex.NAP.Core.Web;
+    using System.ComponentModel.DataAnnotations;
 
     /// <summary>
     /// Get menu item by site criteria.

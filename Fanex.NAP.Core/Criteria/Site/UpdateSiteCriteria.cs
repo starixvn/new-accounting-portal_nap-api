@@ -10,10 +10,10 @@
 
 namespace Fanex.NAP.Core.Criteria.Site
 {
-    using System.ComponentModel.DataAnnotations;
     using Fanex.Data.Repository;
     using Fanex.NAP.Core.Business;
     using Fanex.NAP.Core.Web;
+    using System.ComponentModel.DataAnnotations;
 
     /// <summary>
     /// Update site criteria.

@@ -9,10 +9,10 @@
 
 namespace Fanex.NAP.Core.Criteria.User
 {
+    using Fanex.Data.Repository;
     using System.Collections.Generic;
     using System.Text;
     using System.Web.Mvc;
-    using Fanex.Data.Repository;
 
     /// <summary>
     /// Check user by username group site criteria.

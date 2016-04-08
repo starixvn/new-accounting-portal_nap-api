@@ -9,8 +9,8 @@
 
 namespace Fanex.NAP.Core.Criteria.Trace
 {
-    using System;
     using Fanex.Data.Repository;
+    using System;
 
     /// <summary>
     /// Insert log user login criteria.

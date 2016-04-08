@@ -21,7 +21,7 @@ namespace Fanex.NAP.Core.Model.ValueObject
         public int Level { get; set; }
 
         public bool IsActive { get; set; }
-        
+
         public DateTime LastLoginDate { get; set; }
 
         public User Creator { get; set; }

@@ -9,9 +9,6 @@
 
 namespace Fanex.NAP.Core.Service.Impl
 {
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Web.Mvc;
     using Fanex.Common.Helper;
     using Fanex.NAP.Core.Business;
     using Fanex.NAP.Core.Command;
@@ -22,6 +19,9 @@ namespace Fanex.NAP.Core.Service.Impl
     using Fanex.NAP.Core.Repository.Impl;
     using Fanex.NAP.Core.Repository.Interface;
     using Fanex.NAP.Core.Service.Interface;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Web.Mvc;
 
     /// <summary>
     /// Group service.
@@ -146,11 +146,11 @@ namespace Fanex.NAP.Core.Service.Impl
                 if (groupList != null)
                 {
                     return groupList.Select(g => new SelectListItem
-                        {
-                            Text = g.Name,
-                            Value = g.Id.ToString(),
-                            Selected = g.Id == selectedGroupId
-                        }).ToList();
+                    {
+                        Text = g.Name,
+                        Value = g.Id.ToString(),
+                        Selected = g.Id == selectedGroupId
+                    }).ToList();
                 }
             }
 

@@ -10,11 +10,11 @@
 
 namespace Fanex.NAP.Core.Repository.Interface
 {
-    using System.Linq;
     using Fanex.Data.Repository;
     using Fanex.NAP.Core.Command;
     using Fanex.NAP.Core.Criteria.Trace;
     using Fanex.NAP.Core.Model.ValueObject;
+    using System.Linq;
 
     public interface ITraceRepository : IDynamicRepository
     {

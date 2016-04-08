@@ -10,10 +10,6 @@
 
 namespace Fanex.NAP.Core.Repository.Impl
 {
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Linq;
     using Fanex.Data;
     using Fanex.Data.Repository;
     using Fanex.NAP.Core.Command;
@@ -23,6 +19,10 @@ namespace Fanex.NAP.Core.Repository.Impl
     using Fanex.NAP.Core.Model;
     using Fanex.NAP.Core.Model.ValueObject;
     using Fanex.NAP.Core.Repository.Interface;
+    using System;
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Linq;
 
     /// <summary>
     /// Site repository.
@@ -171,7 +171,7 @@ namespace Fanex.NAP.Core.Repository.Impl
 
                 return this.GetCommandResult(hash);
             }
-    }
+        }
 
         /// <summary>
         /// Update site.

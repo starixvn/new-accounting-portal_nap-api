@@ -10,11 +10,11 @@
 
 namespace Fanex.NAP.Core.Criteria.Group
 {
+    using Fanex.Data.Repository;
+    using Fanex.NAP.Core.Web;
     using System;
     using System.ComponentModel.DataAnnotations;
     using System.Text;
-    using Fanex.Data.Repository;
-    using Fanex.NAP.Core.Web;
 
     /// <summary>
     /// Assign permission to group criteria.

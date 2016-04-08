@@ -9,11 +9,11 @@
 
 namespace Fanex.NAP.Core.Criteria.Function
 {
-    using System;
-    using System.ComponentModel.DataAnnotations;
     using Fanex.Data.Repository;
     using Fanex.NAP.Core.Business;
     using Fanex.NAP.Core.Web;
+    using System;
+    using System.ComponentModel.DataAnnotations;
 
     /// <summary>
     /// Update function criteria.

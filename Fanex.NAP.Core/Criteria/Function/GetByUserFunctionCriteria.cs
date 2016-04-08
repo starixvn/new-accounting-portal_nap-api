@@ -17,7 +17,7 @@ namespace Fanex.NAP.Core.Criteria.Function
     public class GetByUserFunctionCriteria : CriteriaBase
     {
         public int UserId { get; set; }
-        
+
         public string Environment { get; set; }
 
         /// <summary>

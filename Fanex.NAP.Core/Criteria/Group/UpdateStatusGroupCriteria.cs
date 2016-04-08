@@ -9,8 +9,8 @@
 
 namespace Fanex.NAP.Core.Criteria.Group
 {
-    using System;
     using Fanex.Data.Repository;
+    using System;
 
     /// <summary>
     /// Update group status criteria.

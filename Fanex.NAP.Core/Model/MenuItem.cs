@@ -9,9 +9,9 @@
 
 namespace Fanex.NAP.Core.Model
 {
+    using Fanex.NAP.Core.Domain;
     using System;
     using System.Diagnostics.CodeAnalysis;
-    using Fanex.NAP.Core.Domain;
 
     /// <summary>
     /// Menu item model.

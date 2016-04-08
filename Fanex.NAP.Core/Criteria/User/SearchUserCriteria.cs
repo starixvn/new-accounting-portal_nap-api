@@ -15,11 +15,11 @@ namespace Fanex.NAP.Core.Criteria.User
     /// Search user criteria.
     /// </summary>
     public class SearchUserCriteria : CriteriaBase
-    {       
+    {
         public string Username { get; set; }
-        
+
         public int GroupId { get; set; }
-       
+
         public int SiteId { get; set; }
 
         public int PageIndex { get; set; }
