@@ -26,18 +26,18 @@
         }
 
         [HttpPost]
-        public bool UpdatePassword(int onUserId, [FromBody]UpdatePasswordCustCriteria criteria)
+        public bool UpdatePassword([FromBody]UpdatePasswordCustCriteria criteria)
         {
-            _userService.ServiceContext.UserId = onUserId;
+            _userService.ServiceContext.UserId = criteria.CustId;
 
             ICommandResult result = _userService.ChangePassword(criteria);
             return result.IsSuccessful;
         }
 
         [HttpPost]
-        public bool UpdateProfile(int onUserId, [FromBody]UpdateCustCriteria criteria)
+        public bool UpdateProfile([FromBody]UpdateCustCriteria criteria)
         {
-            _userService.ServiceContext.UserId = onUserId;
+            _userService.ServiceContext.UserId = criteria.CustId;
 
             var result = _userService.InsertOrUpdate(criteria);
             return result.IsSuccessful;
