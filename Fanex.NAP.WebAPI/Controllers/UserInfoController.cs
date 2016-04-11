@@ -26,9 +26,15 @@
         }
 
         [HttpPost]
-        public bool UpdatePassword([FromBody]UpdatePasswordCustCriteria criteria)
+        public bool UpdatePassword(int userId, string password)
         {
-            _userService.ServiceContext.UserId = criteria.CustId;
+            _userService.ServiceContext.UserId = userId;
+
+            var criteria = new UpdatePasswordCustCriteria
+            {
+                CustId = userId,
+                UserPwd = password
+            };
 
             ICommandResult result = _userService.ChangePassword(criteria);
             return result.IsSuccessful;
