@@ -40,33 +40,26 @@
         {
             base.OnAuthorization(actionContext);
 
-            if (!NapSettings.Settings.UseWindowsAuthentication)
+            var request = actionContext.Request;
+
+            if (request.Headers.Authorization != null && TokenAuthenticationScheme.Equals(request.Headers.Authorization.Scheme, StringComparison.OrdinalIgnoreCase))
             {
-                var request = actionContext.Request;
+                var rawAuthzHeader = request.Headers.Authorization.Parameter;
+                var autherizationHeaderArray = GetAutherizationHeaderValues(rawAuthzHeader);
 
-                if (request.Headers.Authorization != null && TokenAuthenticationScheme.Equals(request.Headers.Authorization.Scheme, StringComparison.OrdinalIgnoreCase))
+                if (autherizationHeaderArray != null)
                 {
-                    var rawAuthzHeader = request.Headers.Authorization.Parameter;
-                    var autherizationHeaderArray = GetAutherizationHeaderValues(rawAuthzHeader);
+                    var siteId = autherizationHeaderArray[0];
+                    var incomingBase64Signature = autherizationHeaderArray[1];
+                    var nonce = autherizationHeaderArray[2];
+                    var requestTimeStamp = autherizationHeaderArray[3];
 
-                    if (autherizationHeaderArray != null)
+                    var isValid = IsValidRequest(request, siteId, incomingBase64Signature, nonce, requestTimeStamp);
+
+                    if (isValid)
                     {
-                        var siteId = autherizationHeaderArray[0];
-                        var incomingBase64Signature = autherizationHeaderArray[1];
-                        var nonce = autherizationHeaderArray[2];
-                        var requestTimeStamp = autherizationHeaderArray[3];
-
-                        var isValid = IsValidRequest(request, siteId, incomingBase64Signature, nonce, requestTimeStamp);
-
-                        if (isValid)
-                        {
-                            var currentPrincipal = new GenericPrincipal(new GenericIdentity(siteId), null);
-                            Thread.CurrentPrincipal = currentPrincipal;
-                        }
-                        else
-                        {
-                            HandleUnauthorizedRequest(actionContext);
-                        }
+                        var currentPrincipal = new GenericPrincipal(new GenericIdentity(siteId), null);
+                        Thread.CurrentPrincipal = currentPrincipal;
                     }
                     else
                     {
@@ -77,6 +70,10 @@
                 {
                     HandleUnauthorizedRequest(actionContext);
                 }
+            }
+            else
+            {
+                HandleUnauthorizedRequest(actionContext);
             }
         }
 

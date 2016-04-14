@@ -28,7 +28,6 @@ namespace Fanex.NAP.Core.Configuration
         private const string __UNAUTHORIZE_URL = "UnauthorizeUrl";
         private const string __NAP_DOMAIN = "Domain";
         private const string __NAP_DOMAIN__ADD = "add";
-        private const string NAPUseWindowsAuthentication = "UseWindowsAuthentication";
 
         #endregion consts
 
@@ -130,13 +129,6 @@ namespace Fanex.NAP.Core.Configuration
 
                 return domainCollection;
             }
-        }
-
-        [ConfigurationProperty(NAPUseWindowsAuthentication, IsRequired = false, DefaultValue = true)]
-        public bool UseWindowsAuthentication
-        {
-            get { return (bool)this[NAPUseWindowsAuthentication]; }
-            set { this[NAPUseWindowsAuthentication] = value; }
         }
 
         [ConfigurationProperty(__ENABLE_DIRECT_LOGIN, IsRequired = true)]
