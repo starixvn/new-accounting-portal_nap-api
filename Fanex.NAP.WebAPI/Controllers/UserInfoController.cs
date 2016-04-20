@@ -6,8 +6,10 @@
     using Core.Service.Impl;
     using Core.Service.Interface;
     using Core.Web.Context;
+    using Filters;
     using System.Web.Http;
 
+    [NAPAuthorizationFilter]
     public class UserInfoController : ApiController
     {
         private IUserService _userService;
@@ -26,9 +28,10 @@
         }
 
         [HttpPost]
-        public bool UpdatePassword(int userId, string password)
+        public bool UpdatePassword(int siteId, int userId, string password)
         {
             _userService.ServiceContext.UserId = userId;
+            _userService.ServiceContext.SiteId = siteId;
 
             var criteria = new UpdatePasswordCustCriteria
             {
@@ -41,9 +44,10 @@
         }
 
         [HttpPost]
-        public bool UpdateProfile([FromBody]UpdateCustCriteria criteria)
+        public bool UpdateProfile(int siteId, [FromBody]UpdateCustCriteria criteria)
         {
             _userService.ServiceContext.UserId = criteria.CustId;
+            _userService.ServiceContext.SiteId = siteId;
 
             var result = _userService.InsertOrUpdate(criteria);
             return result.IsSuccessful;
@@ -53,8 +57,7 @@
         {
             IServiceContext serviceContext = new ServiceContext();
             serviceContext.Ip = (new CurrentContext()).IP;
-            serviceContext.SiteId = NapSettings.Settings.SiteId;
-
+            
             return serviceContext;
         }
     }
