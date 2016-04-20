@@ -5,6 +5,7 @@
     using System.Web.Http.Filters;
     using Fanex.NAP.WebAPI.Extensions;
     using log4net;
+    using Newtonsoft.Json;
 
     public class LogInfoFilterAttr : ActionFilterAttribute
     {
@@ -21,6 +22,17 @@
                 "Url: " + actionContext.Request.RequestUri.OriginalString,
                 "Body: " + actionContext.Request.GetBodyForm(),
                 string.Empty);
+
+            Logger.Info(message);
+        }
+
+        public override void OnActionExecuted(HttpActionExecutedContext actionExecutedContext)
+        {
+            base.OnActionExecuted(actionExecutedContext);
+
+            var responseObj = JsonConvert.DeserializeObject(actionExecutedContext.Response.Content.ReadAsStringAsync().Result);
+
+            var message = "Response: " + responseObj.ToString();
 
             Logger.Info(message);
         }
