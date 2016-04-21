@@ -23,7 +23,6 @@
 
         public IGroup Get(int id)
         {
-            Logging.LogService.Info("[GroupController] Group Id: " + _groupService.GetById(id));
             return _groupService.GetById(id);
         }
     }

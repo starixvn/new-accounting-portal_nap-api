@@ -22,7 +22,6 @@ namespace Fanex.NAP.Core.Service.Impl
     using System.Collections.Generic;
     using System.Linq;
     using System.Web.Mvc;
-    using Fanex.Logging;
 
     /// <summary>
     /// Group service.
@@ -79,7 +78,6 @@ namespace Fanex.NAP.Core.Service.Impl
 
             if (criteria.IsValid())
             {
-                LogService.Info("[GroupService] Group id: " + this._groupRepository.Get(criteria));
                 return this._groupRepository.Get(criteria);
             }
 
