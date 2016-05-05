@@ -32,7 +32,7 @@
 
             var responseObj = JsonConvert.DeserializeObject(actionExecutedContext.Response.Content.ReadAsStringAsync().Result);
 
-            var message = "Response: " + responseObj.ToString();
+            var message = "Response: " + responseObj?.ToString();
 
             Logger.Info(message);
         }
