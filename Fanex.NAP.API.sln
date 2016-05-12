@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CodeAnalysis", "CodeAnalysis", "{D19C1772-9060-4A65-A07F-0363C1B6AF2E}"
 	ProjectSection(SolutionItems) = preProject
@@ -21,6 +21,12 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|Mixed Platforms = Release|Mixed Platforms
 		Release|x86 = Release|x86
+		test|Any CPU = test|Any CPU
+		test|Mixed Platforms = test|Mixed Platforms
+		test|x86 = test|x86
+		Web.ConnectionString.Local1|Any CPU = Web.ConnectionString.Local1|Any CPU
+		Web.ConnectionString.Local1|Mixed Platforms = Web.ConnectionString.Local1|Mixed Platforms
+		Web.ConnectionString.Local1|x86 = Web.ConnectionString.Local1|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{2136E1D1-DB76-4365-9B4F-C1DDCFF376A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -33,6 +39,18 @@ Global
 		{2136E1D1-DB76-4365-9B4F-C1DDCFF376A8}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{2136E1D1-DB76-4365-9B4F-C1DDCFF376A8}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{2136E1D1-DB76-4365-9B4F-C1DDCFF376A8}.Release|x86.ActiveCfg = Release|Any CPU
+		{2136E1D1-DB76-4365-9B4F-C1DDCFF376A8}.test|Any CPU.ActiveCfg = Release|Any CPU
+		{2136E1D1-DB76-4365-9B4F-C1DDCFF376A8}.test|Any CPU.Build.0 = Release|Any CPU
+		{2136E1D1-DB76-4365-9B4F-C1DDCFF376A8}.test|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{2136E1D1-DB76-4365-9B4F-C1DDCFF376A8}.test|Mixed Platforms.Build.0 = Release|Any CPU
+		{2136E1D1-DB76-4365-9B4F-C1DDCFF376A8}.test|x86.ActiveCfg = Release|Any CPU
+		{2136E1D1-DB76-4365-9B4F-C1DDCFF376A8}.test|x86.Build.0 = Release|Any CPU
+		{2136E1D1-DB76-4365-9B4F-C1DDCFF376A8}.Web.ConnectionString.Local1|Any CPU.ActiveCfg = Release|Any CPU
+		{2136E1D1-DB76-4365-9B4F-C1DDCFF376A8}.Web.ConnectionString.Local1|Any CPU.Build.0 = Release|Any CPU
+		{2136E1D1-DB76-4365-9B4F-C1DDCFF376A8}.Web.ConnectionString.Local1|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{2136E1D1-DB76-4365-9B4F-C1DDCFF376A8}.Web.ConnectionString.Local1|Mixed Platforms.Build.0 = Release|Any CPU
+		{2136E1D1-DB76-4365-9B4F-C1DDCFF376A8}.Web.ConnectionString.Local1|x86.ActiveCfg = Release|Any CPU
+		{2136E1D1-DB76-4365-9B4F-C1DDCFF376A8}.Web.ConnectionString.Local1|x86.Build.0 = Release|Any CPU
 		{68644D51-F1A0-4747-A71D-D45169CCD430}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{68644D51-F1A0-4747-A71D-D45169CCD430}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68644D51-F1A0-4747-A71D-D45169CCD430}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -43,6 +61,18 @@ Global
 		{68644D51-F1A0-4747-A71D-D45169CCD430}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{68644D51-F1A0-4747-A71D-D45169CCD430}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{68644D51-F1A0-4747-A71D-D45169CCD430}.Release|x86.ActiveCfg = Release|Any CPU
+		{68644D51-F1A0-4747-A71D-D45169CCD430}.test|Any CPU.ActiveCfg = Release|Any CPU
+		{68644D51-F1A0-4747-A71D-D45169CCD430}.test|Any CPU.Build.0 = Release|Any CPU
+		{68644D51-F1A0-4747-A71D-D45169CCD430}.test|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{68644D51-F1A0-4747-A71D-D45169CCD430}.test|Mixed Platforms.Build.0 = Release|Any CPU
+		{68644D51-F1A0-4747-A71D-D45169CCD430}.test|x86.ActiveCfg = Release|Any CPU
+		{68644D51-F1A0-4747-A71D-D45169CCD430}.test|x86.Build.0 = Release|Any CPU
+		{68644D51-F1A0-4747-A71D-D45169CCD430}.Web.ConnectionString.Local1|Any CPU.ActiveCfg = Release|Any CPU
+		{68644D51-F1A0-4747-A71D-D45169CCD430}.Web.ConnectionString.Local1|Any CPU.Build.0 = Release|Any CPU
+		{68644D51-F1A0-4747-A71D-D45169CCD430}.Web.ConnectionString.Local1|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{68644D51-F1A0-4747-A71D-D45169CCD430}.Web.ConnectionString.Local1|Mixed Platforms.Build.0 = Release|Any CPU
+		{68644D51-F1A0-4747-A71D-D45169CCD430}.Web.ConnectionString.Local1|x86.ActiveCfg = Release|Any CPU
+		{68644D51-F1A0-4747-A71D-D45169CCD430}.Web.ConnectionString.Local1|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -264,6 +264,7 @@
     <Content Include="Web.ConnectionString.backupMNL.config">
       <DependentUpon>Web.ConnectionString.config</DependentUpon>
     </Content>
+    <Content Include="Web.ConnectionString.Local1.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Fanex.NAP.Core\Fanex.NAP.Core.csproj">
