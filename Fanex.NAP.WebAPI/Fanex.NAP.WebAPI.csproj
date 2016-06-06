@@ -216,12 +216,6 @@
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </Content>
-    <Content Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -230,13 +224,6 @@
   <ItemGroup>
     <None Include="Properties\PublishProfiles\Fanex.NAP.API.pubxml" />
     <Content Include="Web.ConnectionString.config">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Web.Local.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </Content>
-    <Content Include="Web.Pro.config">
-      <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Web.ConnectionString.Uat.config">
@@ -252,19 +239,21 @@
       <DependentUpon>Web.ConnectionString.config</DependentUpon>
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Web.Uat.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </Content>
-    <Content Include="Web.Sit.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </Content>
-    <Content Include="Web.backupMNL.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </Content>
     <Content Include="Web.ConnectionString.backupMNL.config">
       <DependentUpon>Web.ConnectionString.config</DependentUpon>
     </Content>
     <Content Include="Web.ConnectionString.Local1.config" />
+    <Content Include="Web.backupMNL.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Local.config" />
+    <Content Include="Web.Pro.config" />
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Sit.config" />
+    <Content Include="Web.Uat.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Fanex.NAP.Core\Fanex.NAP.Core.csproj">
