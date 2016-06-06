@@ -17,6 +17,7 @@ namespace Fanex.NAP.Core.Web
     public static class DateTimeExtensions
     {
         public const string ShortDateFormat = "MM/dd/yyyy";
+        public const string ShortMonthFormatedDate = "dd MMM yyyy";
 
         /// <summary>
         /// Format a DateTime value to short date format, separated by '-'.
@@ -41,6 +42,21 @@ namespace Fanex.NAP.Core.Web
         public static string ToShortFormatedDate(this DateTime date)
         {
             return date.ToString(ShortDateFormat);
+        }
+
+        public static string ToShortMonthFormatedDate(this DateTime? date)
+        {
+            if (date.HasValue)
+            {
+                return date.Value.ToShortFormatedDate();
+            }
+
+            return string.Empty;
+        }
+
+        public static string ToShortMonthFormatedDate(this DateTime date)
+        {
+            return date.ToString(ShortMonthFormatedDate);
         }
     }
 }

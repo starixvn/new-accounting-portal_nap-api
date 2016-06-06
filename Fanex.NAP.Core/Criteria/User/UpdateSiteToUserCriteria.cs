@@ -22,6 +22,10 @@ namespace Fanex.NAP.Core.Criteria.User
 
         public bool IsActive { get; set; }
 
+        public DateTime ExpiredDate { get; set; }
+
+        public bool IsNeverExpired { get; set; }
+
         public int ModifiedBy { get; set; }
 
         public DateTime ModifiedDate { get; set; }

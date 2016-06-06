@@ -628,6 +628,15 @@ namespace Fanex.NAP.Core.Web {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Expired Date.
+        /// </summary>
+        public static string Expired_Date {
+            get {
+                return ResourceManager.GetString("Expired_Date", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Field Name.
         /// </summary>
         public static string Field_Name {

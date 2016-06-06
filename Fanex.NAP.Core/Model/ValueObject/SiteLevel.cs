@@ -22,6 +22,10 @@ namespace Fanex.NAP.Core.Model.ValueObject
 
         public bool IsActive { get; set; }
 
+        public DateTime ExpiredDate { get; set; }
+
+        public bool IsNeverExpired { get; set; }
+
         public DateTime LastLoginDate { get; set; }
 
         public User Creator { get; set; }
