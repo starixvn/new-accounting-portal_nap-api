@@ -196,6 +196,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="App_Data\BACKUPMNL\NAPAdminSpNames.xml" />
+    <Content Include="App_Data\BACKUPMNL\NAPCommonSpNames.xml" />
     <Content Include="App_Data\LOCAL\NAPAdminSpNames.xml">
       <SubType>Designer</SubType>
     </Content>
