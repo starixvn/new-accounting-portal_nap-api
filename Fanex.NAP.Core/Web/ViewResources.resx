@@ -750,4 +750,13 @@
   <data name="Expired_Date" xml:space="preserve">
     <value>Expired Date</value>
   </data>
+  <data name="Secret_Access_Key" xml:space="preserve">
+    <value>Secret Key</value>
+  </data>
+  <data name="Never_Expired" xml:space="preserve">
+    <value>Never Expired</value>
+  </data>
+  <data name="Revoked_Sites" xml:space="preserve">
+    <value>Revoked Sites</value>
+  </data>
 </root>

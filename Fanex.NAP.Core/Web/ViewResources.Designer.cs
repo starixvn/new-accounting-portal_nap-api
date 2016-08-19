@@ -1222,6 +1222,15 @@ namespace Fanex.NAP.Core.Web {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Never Expired.
+        /// </summary>
+        public static string Never_Expired {
+            get {
+                return ResourceManager.GetString("Never_Expired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to New Accounting Portal.
         /// </summary>
         public static string New_Accounting_Portal {
@@ -1528,6 +1537,15 @@ namespace Fanex.NAP.Core.Web {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Revoked Sites.
+        /// </summary>
+        public static string Revoked_Sites {
+            get {
+                return ResourceManager.GetString("Revoked_Sites", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Save.
         /// </summary>
         public static string Save {
@@ -1542,6 +1560,15 @@ namespace Fanex.NAP.Core.Web {
         public static string Search {
             get {
                 return ResourceManager.GetString("Search", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Secret Key.
+        /// </summary>
+        public static string Secret_Access_Key {
+            get {
+                return ResourceManager.GetString("Secret_Access_Key", resourceCulture);
             }
         }
         

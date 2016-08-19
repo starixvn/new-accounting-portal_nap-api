@@ -228,6 +228,9 @@
     <Content Include="Web.ConnectionString.config">
       <SubType>Designer</SubType>
     </Content>
+    <None Include="Web.ConnectionString.Local1.config">
+      <DependentUpon>Web.ConnectionString.config</DependentUpon>
+    </None>
     <Content Include="Web.ConnectionString.Uat.config">
       <DependentUpon>Web.ConnectionString.config</DependentUpon>
     </Content>
@@ -244,7 +247,6 @@
     <Content Include="Web.ConnectionString.backupMNL.config">
       <DependentUpon>Web.ConnectionString.config</DependentUpon>
     </Content>
-    <Content Include="Web.ConnectionString.Local1.config" />
     <Content Include="Web.backupMNL.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

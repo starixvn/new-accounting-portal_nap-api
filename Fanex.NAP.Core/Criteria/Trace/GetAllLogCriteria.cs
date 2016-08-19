@@ -19,6 +19,7 @@ namespace Fanex.NAP.Core.Criteria.Trace
     /// </summary>
     public class GetAllLogCriteria : CriteriaBase
     {
+        [Display(Name = "Modified By")]
         public string Username { get; set; }
 
         public string Name { get; set; }
