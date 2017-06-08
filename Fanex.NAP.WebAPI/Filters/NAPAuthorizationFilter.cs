@@ -1,7 +1,7 @@
 ﻿namespace Fanex.NAP.WebAPI.Filters
 {
     using System;
-    using System.Collections.Generic;
+    using System.Collections.Concurrent;
     using System.Net;
     using System.Net.Http;
     using System.Runtime.Caching;
@@ -12,10 +12,9 @@
     using System.Web;
     using System.Web.Http.Controllers;
     using System.Web.Http.Filters;
-    using Fanex.Caching;
-    using Fanex.NAP.Core.Configuration;
-    using Fanex.NAP.Core.Service.Impl;
-    using Fanex.NAP.Core.Service.Interface;
+    using Caching;
+    using Core.Service.Impl;
+    using Core.Service.Interface;
 
     public class NAPAuthorizationFilter : AuthorizationFilterAttribute
     {
@@ -102,8 +101,8 @@
             string requestUri = HttpUtility.UrlEncode(req.RequestUri.AbsoluteUri.ToLower());
             string requestHttpMethod = req.Method.Method;
 
-            var allowedApps = _cache.Get<Dictionary<string, string>>(CacheKey);
-            allowedApps = allowedApps ?? new Dictionary<string, string>();
+            var allowedApps = _cache.Get<ConcurrentDictionary<string, string>>(CacheKey);
+            allowedApps = allowedApps ?? new ConcurrentDictionary<string, string>();
 
             if (!allowedApps.ContainsKey(siteId))
             {
@@ -111,8 +110,8 @@
 
                 if (site != null)
                 {
-                    allowedApps.Add(siteId, site.SecretAccessKey);
-                    _cache.Set<Dictionary<string, string>>(CacheKey, allowedApps);
+                    allowedApps.AddOrUpdate(siteId, site.SecretAccessKey, (k, v) => v);
+                    _cache.Set(CacheKey, allowedApps);
                 }
                 else
                 {
@@ -177,6 +176,7 @@
             {
                 byte[] hash = null;
                 var content = httpContent.ReadAsByteArrayAsync().Result;
+
                 if (content.Length != 0)
                 {
                     hash = md5.ComputeHash(content);

@@ -1,9 +1,10 @@
 ﻿namespace Fanex.NAP.WebAPI.Filters
 {
     using System.Reflection;
+    using System.Text;
     using System.Web.Http.Controllers;
     using System.Web.Http.Filters;
-    using Fanex.NAP.WebAPI.Extensions;
+    using Extensions;
     using log4net;
     using Newtonsoft.Json;
 
@@ -29,12 +30,23 @@
         public override void OnActionExecuted(HttpActionExecutedContext actionExecutedContext)
         {
             base.OnActionExecuted(actionExecutedContext);
+            var messageBuilder = new StringBuilder();
+            var exception = actionExecutedContext.Exception;
 
-            var responseObj = JsonConvert.DeserializeObject(actionExecutedContext.Response.Content.ReadAsStringAsync().Result);
+            if (exception != null)
+            {
+                messageBuilder.AppendFormat("ExceptionMessage: {0}", exception.Message).AppendLine();
+                messageBuilder.AppendFormat("Type: {0}", exception.GetType()).AppendLine();
+                messageBuilder.AppendFormat("Source: {0}", exception.Source).AppendLine();
+                messageBuilder.AppendFormat("StackTrace: {0}", exception.StackTrace).AppendLine();
+            }
+            else
+            {
+                var responseObj = JsonConvert.DeserializeObject(actionExecutedContext.Response.Content.ReadAsStringAsync().Result);
+                messageBuilder.AppendFormat("ResponseData: {0}", responseObj?.ToString()).AppendLine();
+            }
 
-            var message = "Response: " + responseObj?.ToString();
-
-            Logger.Info(message);
+            Logger.Info(messageBuilder.ToString());
         }
     }
 }
