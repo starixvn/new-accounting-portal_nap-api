@@ -34,7 +34,7 @@
       <Mapping DataField="SiteEnvironment" ObjectProperty="Environment" />
     </Setting>
     <Setting Key="NAP_Site_GetUserSiteLevel" SpName="NAP_Site_GetUserSiteLevel" DbName="DBNAP.bodb_NAP.bodbAdminNet"></Setting>
-    <Setting Key="NAP_Site_GetSiteKey" SpName="NAP_Site_GetSiteKey" DbName="DBNAP.bodb_NAP.bodbAdminNet">
+    <Setting Key="NAP_Site_GetSiteKey" SpName="NAP_Site_GetByKey" DbName="DBNAP.bodb_NAP.bodbAdminNet">
       <Mapping DataField="SiteId" ObjectProperty="Id" />
       <Mapping DataField="SiteName" ObjectProperty="Name" />
     </Setting>
