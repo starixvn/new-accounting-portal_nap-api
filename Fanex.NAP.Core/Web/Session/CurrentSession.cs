@@ -1,10 +1,10 @@
 ﻿namespace Fanex.NAP.Core.Web.Session
 {
-    using Fanex.NAP.Core.Configuration;
-    using Fanex.NAP.Core.Model;
     using System;
     using System.Collections.Generic;
     using System.Web;
+    using Configuration;
+    using Model;
 
     /// <summary>
     /// Current session.
@@ -27,7 +27,7 @@
 
         #endregion const
 
-        private int _siteId = NapSettings.Settings.SiteId;
+        private readonly int _siteId = NapSettings.Settings.SiteId;
 
         public string Username
         {

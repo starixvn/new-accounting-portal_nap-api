@@ -34,7 +34,7 @@
             base.OnException(actionExecutedContext);
         }
 
-        private void LogDatabaseException(Exception exception, StringBuilder messageBuilder)
+        private static void LogDatabaseException(Exception exception, StringBuilder messageBuilder)
         {
             var objectDbException = exception as ObjectDbException;
 

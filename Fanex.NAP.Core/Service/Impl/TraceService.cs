@@ -116,7 +116,7 @@
                                 xmlElementValue.Add(xmlElementChildTemp);
                             }
 
-                            xmlElementData.SetAttributeValue("Value", this.EncodeXMLValue(xmlElementValue.ToString()));
+                            xmlElementData.SetAttributeValue("Value", EncodeXMLValue(xmlElementValue.ToString()));
                         }
 
                         logExec.Data = xmlElementData.ToString();
@@ -157,7 +157,7 @@
                                 xmlElementValue.Add(xmlElementChildTemp);
                             }
 
-                            xmlElementData.SetAttributeValue("Value", this.EncodeXMLValue(xmlElementValue.ToString()));
+                            xmlElementData.SetAttributeValue("Value", EncodeXMLValue(xmlElementValue.ToString()));
                         }
 
                         logExec.OldData = xmlElementData.ToString();
@@ -220,17 +220,11 @@
         /// </summary>
         /// <param name="value">XML value.</param>
         /// <returns>Encoded XML value.</returns>
-        private string EncodeXMLValue(string value)
+        private static string EncodeXMLValue(string value)
         {
             if (!string.IsNullOrEmpty(value))
             {
-                value = value.Replace("&", "&amp;");
-                value = value.Replace("<", "&lt;");
-                value = value.Replace(">", "&gt;");
-                value = value.Replace("\"", "&quot;");
-                value = value.Replace("''", "&apos;");
-
-                return value;
+                return value.Replace("&", "&amp;").Replace("<", "&lt;").Replace(">", "&gt;").Replace("\"", "&quot;").Replace("''", "&apos;");
             }
 
             return value;

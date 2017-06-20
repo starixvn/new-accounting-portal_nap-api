@@ -1,18 +1,17 @@
 ﻿namespace Fanex.NAP.WebAPI.Controllers
 {
+    using System.Web.Http;
     using Core.Command;
-    using Core.Configuration;
     using Core.Criteria.User;
     using Core.Service.Impl;
     using Core.Service.Interface;
     using Core.Web.Context;
     using Filters;
-    using System.Web.Http;
 
     [NAPAuthorizationFilter]
     public class UserInfoController : ApiController
     {
-        private IUserService _userService;
+        private readonly IUserService _userService;
 
         public UserInfoController()
             : this(null)
@@ -21,7 +20,7 @@
 
         public UserInfoController(IUserService userService)
         {
-            _userService = userService ?? new UserService()
+            _userService = userService ?? new UserService
             {
                 ServiceContext = InitServiceContext()
             };
@@ -53,11 +52,11 @@
             return result.IsSuccessful;
         }
 
-        private IServiceContext InitServiceContext()
+        private static IServiceContext InitServiceContext()
         {
             IServiceContext serviceContext = new ServiceContext();
             serviceContext.Ip = (new CurrentContext()).IP;
-            
+
             return serviceContext;
         }
     }

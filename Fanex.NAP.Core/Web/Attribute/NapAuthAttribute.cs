@@ -1,24 +1,21 @@
 ﻿namespace Fanex.NAP.Core.Web.Attribute
 {
-    using Fanex.NAP.Core.Business;
-    using Fanex.NAP.Core.Configuration;
-    using Fanex.NAP.Core.Service.Impl;
-    using Fanex.NAP.Core.Service.Interface;
-    using Fanex.NAP.Core.Web.Auth;
     using System;
     using System.Web;
     using System.Web.Mvc;
     using System.Web.Security;
+    using Auth;
+    using Business;
+    using Configuration;
+    using Service.Impl;
+    using Service.Interface;
 
-    /// <summary>
-    /// <see cref="http://www.hanselman.com/blog/SystemThreadingThreadCurrentPrincipalVsSystemWebHttpContextCurrentUserOrWhyFormsAuthenticationCanBeSubtle.aspx"/>
-    /// </summary>
     [AttributeUsageAttribute(AttributeTargets.Class | AttributeTargets.Method, Inherited = true, AllowMultiple = true)]
     public sealed class NapAuthAttribute : AuthorizeAttribute
     {
         #region Member
 
-        private static readonly int _SiteId = Configuration.NapSettings.Settings.SiteId;
+        private static readonly int _SiteId = NapSettings.Settings.SiteId;
 
         private static readonly IUserService UserService = new UserService();
 
@@ -34,12 +31,12 @@
         {
             get
             {
-                return this._functionKey == null ? string.Empty : this._functionKey;
+                return _functionKey ?? string.Empty;
             }
 
             set
             {
-                this._functionKey = value;
+                _functionKey = value;
             }
         }
 
@@ -47,12 +44,12 @@
         {
             get
             {
-                return this._policy == Constant.Policy.None ? Constant.Policy.Read : this._policy;
+                return _policy == Constant.Policy.None ? Constant.Policy.Read : _policy;
             }
 
             set
             {
-                this._policy = value;
+                _policy = value;
             }
         }
 
@@ -68,7 +65,7 @@
 
             if (filterContext.HttpContext == null)
             {
-                this.CloseConnection(filterContext);
+                CloseConnection(filterContext);
                 return;
             }
 
@@ -80,9 +77,9 @@
                 principal = new NapPrincipal(filterContext.HttpContext);
             }
 
-            if (object.ReferenceEquals(principal, null) || object.ReferenceEquals(principal.AuthInfo, null))
+            if (ReferenceEquals(principal, null) || ReferenceEquals(principal.AuthInfo, null))
             {
-                this.CloseConnection(filterContext);
+                CloseConnection(filterContext);
                 return;
             }
 
@@ -94,8 +91,7 @@
             }
             else
             {
-                this.CloseConnection(filterContext);
-                return;
+                CloseConnection(filterContext);
             }
         }
 
@@ -111,22 +107,22 @@
                 return false;
             }
 
-            int policy = UserService.GetUserSiteFunctionKeyPolicy(userId, _SiteId, this.FunctionKey);
+            int policy = UserService.GetUserSiteFunctionKeyPolicy(userId, _SiteId, FunctionKey);
 
-            return policy >= (int)this.Policy;
+            return policy >= (int)Policy;
         }
 
         /// <summary>
         /// Close connection.
         /// </summary>
         /// <param name="filterContext">Filter context.</param>
-        private void CloseConnection(AuthorizationContext filterContext)
+        private static void CloseConnection(AuthorizationContext filterContext)
         {
             if (filterContext == null
                 || filterContext.HttpContext == null
                 || filterContext.HttpContext.Request == null)
             {
-                this.SignOut();
+                SignOut();
                 return;
             }
 
@@ -134,7 +130,7 @@
 
             if (response == null)
             {
-                this.SignOut();
+                SignOut();
                 return;
             }
 
@@ -151,7 +147,7 @@
             }
             else if (!filterContext.HttpContext.Request.IsAuthenticated)
             {
-                this.SignOut();
+                SignOut();
             }
             else
             {
@@ -160,7 +156,7 @@
             }
         }
 
-        private void SignOut()
+        private static void SignOut()
         {
             FormsAuthentication.SignOut();
             FormsAuthentication.RedirectToLoginPage();

@@ -40,7 +40,7 @@
 
                 // Get base exception data
                 string message = ex.Message +
-                    "\r\nType: " + ex.GetType().ToString() +
+                    "\r\nType: " + ex.GetType() +
                     "\r\nSource: " + ex.Source +
                     "\r\nTarget Site: " + ex.TargetSite +
                     "\r\nStack Trace: " + ex.StackTrace;

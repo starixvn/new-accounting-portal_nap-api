@@ -19,7 +19,7 @@
     /// </summary>
     public class GroupService : BaseService, IGroupService
     {
-        private IGroupRepository _groupRepository;
+        private readonly IGroupRepository _groupRepository;
 
         public GroupService()
             : this(null)

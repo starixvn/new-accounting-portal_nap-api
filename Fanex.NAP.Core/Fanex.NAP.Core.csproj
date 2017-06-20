@@ -29,6 +29,7 @@
     <DefineConstants>TRACE;DEBUG;CODE_ANALYSIS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>Fanex.NAP.Core.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -37,6 +38,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>Fanex.NAP.Core.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Couchbase">
@@ -216,6 +218,7 @@
     <Compile Include="Domain\IMenuItem.cs" />
     <Compile Include="Domain\ISite.cs" />
     <Compile Include="Domain\IUser.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Properties\GlobalSuppressions.cs" />
     <Compile Include="Model\ValueObject\LogFunction.cs" />
     <Compile Include="Model\ValueObject\LogUserLogin.cs" />
@@ -280,9 +283,14 @@
       <DependentUpon>ViewResources.resx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.5.11.0.1761\analyzers\Google.Protobuf.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.5.11.0.1761\analyzers\SonarAnalyzer.CSharp.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.5.11.0.1761\analyzers\SonarAnalyzer.dll" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Fanex.NAP.Core.ruleset" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

@@ -41,14 +41,11 @@
         {
             using (var db = new ObjectDb(criteria.GetSettingKey()))
             {
-                return db.QueryEntity<SiteUrl, Site, SiteUrl>(
-                    (su, s) =>
+                return db.QueryEntity<SiteUrl, Site, SiteUrl>((su, s) =>
                     {
                         su.Site = s;
                         return su;
-                    },
-                    "Id",
-                    criteria.GetSpParams());
+                    }, parameters: criteria.GetSpParams());
             }
         }
 
@@ -106,14 +103,11 @@
         {
             using (var db = new ObjectDb(criteria.GetSettingKey()))
             {
-                return db.Query<SiteUrl, Site, SiteUrl>(
-                        (su, s) =>
+                return db.Query<SiteUrl, Site, SiteUrl>((su, s) =>
                         {
                             su.Site = s;
                             return su;
-                        },
-                        "Id",
-                        criteria.GetSpParams()).OrderBy(s => s.Site.Name).ToList<SiteUrl>();
+                        }, parameterValues: criteria.GetSpParams()).OrderBy(s => s.Site.Name).ToList<SiteUrl>();
             }
         }
 

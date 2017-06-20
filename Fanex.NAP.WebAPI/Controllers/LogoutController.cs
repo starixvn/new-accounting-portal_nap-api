@@ -1,14 +1,14 @@
 ﻿namespace Fanex.NAP.WebAPI.Controllers
 {
-    using Fanex.NAP.Core.Criteria.User;
-    using Fanex.NAP.Core.Service.Impl;
-    using Fanex.NAP.Core.Service.Interface;
     using System.Diagnostics.CodeAnalysis;
     using System.Web.Http;
+    using Core.Criteria.User;
+    using Core.Service.Impl;
+    using Core.Service.Interface;
 
     public class LogoutController : ApiController
     {
-        private IUserService _userService;
+        private readonly IUserService _userService;
 
         public LogoutController()
             : this(null)

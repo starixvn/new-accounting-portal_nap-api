@@ -46,7 +46,7 @@
             }
         }
 
-        private bool CheckSessionAuthorization()
+        private static bool CheckSessionAuthorization()
         {
             ICurrentSession session = new CurrentSession();
 

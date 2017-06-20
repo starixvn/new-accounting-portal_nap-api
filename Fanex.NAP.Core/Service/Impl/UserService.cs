@@ -1,22 +1,22 @@
 ﻿namespace Fanex.NAP.Core.Service.Impl
 {
-    using Fanex.Common.Helper;
-    using Fanex.Data.Repository;
-    using Fanex.NAP.Core.Business;
-    using Fanex.NAP.Core.Command;
-    using Fanex.NAP.Core.Criteria.Misc;
-    using Fanex.NAP.Core.Criteria.Trace;
-    using Fanex.NAP.Core.Criteria.User;
-    using Fanex.NAP.Core.Domain;
-    using Fanex.NAP.Core.Model.ValueObject;
-    using Fanex.NAP.Core.Repository.Impl;
-    using Fanex.NAP.Core.Repository.Interface;
-    using Fanex.NAP.Core.Service.Interface;
     using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
     using System.Web.Mvc;
+    using Business;
+    using Command;
+    using Common.Helper;
+    using Criteria.Misc;
+    using Criteria.Trace;
+    using Criteria.User;
+    using Data.Repository;
+    using Domain;
+    using Interface;
+    using Model.ValueObject;
+    using Repository.Impl;
+    using Repository.Interface;
 
     /// <summary>
     /// User service.
@@ -31,7 +31,7 @@
         {
         }
 
-        public UserService(IUserRepository repository = null, ITraceRepository traceRepository = null)
+        public UserService(IUserRepository repository, ITraceRepository traceRepository)
         {
             this._userRepository = repository ?? new UserRepository();
             this._traceRepository = traceRepository ?? new TraceRepository();

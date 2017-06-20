@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CodeAnalysis", "CodeAnalysis", "{D19C1772-9060-4A65-A07F-0363C1B6AF2E}"
 	ProjectSection(SolutionItems) = preProject
@@ -12,6 +12,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fanex.NAP.Core", "Fanex.NAP.Core\Fanex.NAP.Core.csproj", "{2136E1D1-DB76-4365-9B4F-C1DDCFF376A8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fanex.NAP.WebAPI", "Fanex.NAP.WebAPI\Fanex.NAP.WebAPI.csproj", "{68644D51-F1A0-4747-A71D-D45169CCD430}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SonarQube", "SonarQube", "{981B7ED1-6AB8-406F-965B-46E12B96CA05}"
+	ProjectSection(SolutionItems) = preProject
+		SonarQube\NAPAPICSharp.ruleset = SonarQube\NAPAPICSharp.ruleset
+		SonarQube\SolutionBinding.sqconfig = SonarQube\SolutionBinding.sqconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

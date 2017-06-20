@@ -1,18 +1,18 @@
 ﻿namespace Fanex.NAP.WebAPI.Controllers
 {
-    using Core.Domain;
-    using Fanex.NAP.Core.Model.ValueObject;
-    using Fanex.NAP.Core.Service.Impl;
-    using Fanex.NAP.Core.Service.Interface;
-    using Fanex.NAP.WebAPI.Filters;
     using System.Collections.Generic;
     using System.Web.Http;
+    using Core.Domain;
+    using Core.Model.ValueObject;
+    using Core.Service.Impl;
+    using Core.Service.Interface;
+    using Filters;
 
     [NAPAuthorizationFilter]
     public class SiteController : ApiController
     {
-        private ISiteService _siteService;
-        private IMenuItemService _menuItemService;
+        private readonly ISiteService _siteService;
+        private readonly IMenuItemService _menuItemService;
 
         public SiteController()
             : this(null, null)

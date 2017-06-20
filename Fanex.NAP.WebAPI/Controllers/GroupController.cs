@@ -1,15 +1,15 @@
 ﻿namespace Fanex.NAP.WebAPI.Controllers
 {
-    using Fanex.NAP.Core.Domain;
-    using Fanex.NAP.Core.Service.Impl;
-    using Fanex.NAP.Core.Service.Interface;
-    using Fanex.NAP.WebAPI.Filters;
     using System.Web.Http;
+    using Core.Domain;
+    using Core.Service.Impl;
+    using Core.Service.Interface;
+    using Filters;
 
     [NAPAuthorizationFilter]
     public class GroupController : ApiController
     {
-        private IGroupService _groupService;
+        private readonly IGroupService _groupService;
 
         public GroupController()
             : this(null)

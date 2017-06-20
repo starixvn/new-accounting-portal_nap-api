@@ -29,7 +29,7 @@
         {
         }
 
-        public NAPAuthorizationFilter(ICache cache = null, ISiteService siteService = null)
+        public NAPAuthorizationFilter(ICache cache, ISiteService siteService)
         {
             _siteService = siteService ?? new SiteService();
             _cache = cache ?? CacheService.CreateInstance(CacheType.MemoryCache);
@@ -76,29 +76,20 @@
             }
         }
 
-        private void HandleUnauthorizedRequest(HttpActionContext actionContext)
-        {
-            actionContext.Response = actionContext.Request.CreateResponse(HttpStatusCode.Unauthorized);
-        }
+        private static void HandleUnauthorizedRequest(HttpActionContext actionContext)
+            => actionContext.Response = actionContext.Request.CreateResponse(HttpStatusCode.Unauthorized);
 
-        private string[] GetAutherizationHeaderValues(string rawAuthzHeader)
+        private static string[] GetAutherizationHeaderValues(string rawAuthzHeader)
         {
             var credArray = rawAuthzHeader.Split(':');
 
-            if (credArray.Length == 4)
-            {
-                return credArray;
-            }
-            else
-            {
-                return null;
-            }
+            return credArray.Length == 4 ? credArray : null;
         }
 
         private bool IsValidRequest(HttpRequestMessage req, string siteId, string incomingBase64Signature, string nonce, string requestTimeStamp)
         {
             string requestContentBase64String = string.Empty;
-            string requestUri = HttpUtility.UrlEncode(req.RequestUri.AbsoluteUri.ToLower());
+            string requestUri = HttpUtility.UrlEncode(req.RequestUri.AbsoluteUri.ToLowerInvariant());
             string requestHttpMethod = req.Method.Method;
 
             var allowedApps = _cache.Get<ConcurrentDictionary<string, string>>(CacheKey);
@@ -147,7 +138,7 @@
             }
         }
 
-        private bool IsReplayRequest(string nonce, string requestTimeStamp)
+        private static bool IsReplayRequest(string nonce, string requestTimeStamp)
         {
             if (MemoryCache.Default.Contains(nonce))
             {
@@ -170,7 +161,7 @@
             return false;
         }
 
-        private byte[] ComputeHash(HttpContent httpContent)
+        private static byte[] ComputeHash(HttpContent httpContent)
         {
             using (MD5 md5 = MD5.Create())
             {

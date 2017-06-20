@@ -25,7 +25,7 @@
         {
         }
 
-        public MenuItemService(IMenuItemRepository menuItemRepository = null)
+        public MenuItemService(IMenuItemRepository menuItemRepository)
         {
             this._menuItemRepository = menuItemRepository ?? new MenuItemRepository();
         }

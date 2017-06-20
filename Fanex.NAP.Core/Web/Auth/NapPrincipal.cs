@@ -5,13 +5,10 @@
     using System.Web;
     using System.Web.Security;
 
-    /// <summary>
-    /// <see cref="http://stackoverflow.com/questions/1064271/asp-net-mvc-set-custom-iidentity-or-iprincipal"/>
-    /// </summary>
     public class NapPrincipal : IPrincipal
     {
-        private IIdentity _identity;
-        private AuthInfo _authInfo;
+        private readonly IIdentity _identity;
+        private readonly AuthInfo _authInfo;
 
         public NapPrincipal(IIdentity identity, AuthInfo authInfo)
         {
@@ -23,7 +20,7 @@
         {
             if (httpContext == null)
             {
-                throw new ArgumentNullException("httpContext");
+                throw new ArgumentNullException(nameof(httpContext));
             }
 
             if (HttpContext.Current.User.Identity is FormsIdentity && HttpContext.Current.User.Identity.IsAuthenticated)

@@ -13,8 +13,6 @@
     /// </summary>
     public class CurrentContext : ICurrentContext
     {
-        private const string _CONFIGNAPHUBSITEID = "SiteId";
-
         public string IP
         {
             get

@@ -4,7 +4,6 @@
     using System.Linq;
     using System.Web.Http;
     using Core.Domain;
-    using Core.Model;
     using Core.Model.ValueObject;
     using Core.Service.Impl;
     using Core.Service.Interface;
@@ -13,10 +12,10 @@
     [NAPAuthorizationFilter]
     public class UserController : ApiController
     {
-        private IUserService _userService;
-        private ISiteService _siteService;
-        private IMenuItemService _menuItemService;
-        private IFunctionService _functionService;
+        private readonly IUserService _userService;
+        private readonly ISiteService _siteService;
+        private readonly IMenuItemService _menuItemService;
+        private readonly IFunctionService _functionService;
 
         public UserController()
             : this(null, null, null, null)
@@ -38,9 +37,9 @@
         }
 
         [HttpGet]
-        public User Get(string username)
+        public IUser Get(string username)
         {
-            return (User)_userService.GetByUsername(username);
+            return _userService.GetByUsername(username);
         }
 
         [HttpGet]

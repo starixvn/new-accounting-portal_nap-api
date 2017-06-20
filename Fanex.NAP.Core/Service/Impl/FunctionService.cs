@@ -29,7 +29,7 @@
         {
         }
 
-        public FunctionService(IFunctionRepository functionRepository = null)
+        public FunctionService(IFunctionRepository functionRepository)
         {
             this._functionRepository = functionRepository ?? new FunctionRepository();
         }
@@ -171,7 +171,7 @@
                     .Select(s => new Site
                     {
                         Id = s.Key,
-                        Name = s.Where(f => f.Site.Id == s.Key).FirstOrDefault().Site.Name
+                        Name = s.FirstOrDefault(f => f.Site.Id == s.Key).Site.Name
                     }).ToList();
 
                 foreach (var site in siteList)
@@ -405,7 +405,7 @@
                     .Select(s => new Site
                     {
                         Id = s.Key,
-                        Name = s.Where(f => f.Site.Id == s.Key).FirstOrDefault().Site.Name
+                        Name = s.FirstOrDefault(f => f.Site.Id == s.Key).Site.Name
                     }).ToList();
 
                 foreach (Site site in siteList)
@@ -504,7 +504,7 @@
                     .Select(s => new Site
                     {
                         Id = s.Key,
-                        Name = s.Where(f => f.Site.Id == s.Key).FirstOrDefault().Site.Name
+                        Name = s.FirstOrDefault(f => f.Site.Id == s.Key).Site.Name
                     }).ToList();
 
                 foreach (Site site in siteList)
