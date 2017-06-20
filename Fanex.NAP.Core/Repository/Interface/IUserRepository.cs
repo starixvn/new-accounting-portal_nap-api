@@ -1,13 +1,4 @@
-﻿// --------------------------------------------------------------------------
-// <copyright file="IUserRepository.cs" company="Nexcel Solutions Vietnam">
-// Copyright (c) Nexcel Solutions Vietnam. All rights reserved.
-// </copyright>
-// --------------------------------------------------------------------------
-// <history>
-//   <change who="Anders.Le" date="2012.8.1">Created</change>
-// </history>
-
-namespace Fanex.NAP.Core.Repository.Interface
+﻿namespace Fanex.NAP.Core.Repository.Interface
 {
     using Fanex.Data.Repository;
     using Fanex.NAP.Core.Command;

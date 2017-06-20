@@ -1,13 +1,4 @@
-﻿// --------------------------------------------------------------------------
-// <copyright file="DomainCollection.cs" company="Nexcel Solutions Vietnam">
-// Copyright (c) Nexcel Solutions Vietnam. All rights reserved.
-// </copyright>
-// --------------------------------------------------------------------------
-// <history>
-//   <change who="Lewis.Le" date="2012.10.17">Created</change>
-// </history>
-
-namespace Fanex.NAP.Core.Configuration
+﻿namespace Fanex.NAP.Core.Configuration
 {
     using System.Configuration;
     using System.Diagnostics.CodeAnalysis;
@@ -18,22 +9,13 @@ namespace Fanex.NAP.Core.Configuration
     [SuppressMessage("Microsoft.Design", "CA1010:CollectionsShouldImplementGenericInterface", Justification = "Reviewed")]
     public class DomainCollection : ConfigurationElementCollection
     {
-        public DomainCollection()
-        {
-        }
-
         /// <summary>
         /// Gets the type of the <see cref="T:System.Configuration.ConfigurationElementCollection" />.
         /// </summary>
         /// <returns>The <see cref="T:System.Configuration.ConfigurationElementCollectionType" /> of this collection.</returns>
         /// <value>Configuration element collection.</value>
         public override ConfigurationElementCollectionType CollectionType
-        {
-            get
-            {
-                return ConfigurationElementCollectionType.AddRemoveClearMap;
-            }
-        }
+            => ConfigurationElementCollectionType.AddRemoveClearMap;
 
         /// <summary>
         /// Gets or sets the <see cref="DomainElement"/> at the specified index.
@@ -52,12 +34,12 @@ namespace Fanex.NAP.Core.Configuration
 
             set
             {
-                if (this.BaseGet(index) != null)
+                if (BaseGet(index) != null)
                 {
-                    this.BaseRemoveAt(index);
+                    BaseRemoveAt(index);
                 }
 
-                this.BaseAdd(index, value);
+                BaseAdd(index, value);
             }
         }
 
@@ -66,9 +48,7 @@ namespace Fanex.NAP.Core.Configuration
         /// </summary>
         /// <param name="mappingElement">The mapping element.</param>
         public void Add(DomainElement mappingElement)
-        {
-            this.BaseAdd(mappingElement);
-        }
+            => BaseAdd(mappingElement);
 
         /// <summary>
         /// Adds a configuration element to the <see cref="T:System.Configuration.ConfigurationElementCollection" />.

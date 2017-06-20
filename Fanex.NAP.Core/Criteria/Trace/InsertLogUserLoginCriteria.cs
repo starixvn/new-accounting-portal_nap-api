@@ -1,13 +1,4 @@
-﻿// --------------------------------------------------------------------------
-// <copyright file="InsertLogUserLoginCriteria.cs" company="Nexcel Solutions Vietnam">
-// Copyright (c) Nexcel Solutions Vietnam. All rights reserved.
-// </copyright>
-// --------------------------------------------------------------------------
-// <history>
-//   <change who="Edward.Nguyen" date="2012.11.19">Created</change>
-// </history>
-
-namespace Fanex.NAP.Core.Criteria.Trace
+﻿namespace Fanex.NAP.Core.Criteria.Trace
 {
     using Fanex.Data.Repository;
     using System;

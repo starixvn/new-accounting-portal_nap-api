@@ -1,13 +1,4 @@
-﻿// --------------------------------------------------------------------------
-// <copyright file="GroupService.cs" company="Nexcel Solutions Vietnam">
-// Copyright (c) Nexcel Solutions Vietnam. All rights reserved.
-// </copyright>
-// --------------------------------------------------------------------------
-// <history>
-//   <change who="Edward.Nguyen" date="2012.8.15">Created</change>
-// </history>
-
-namespace Fanex.NAP.Core.Service.Impl
+﻿namespace Fanex.NAP.Core.Service.Impl
 {
     using Fanex.Common.Helper;
     using Fanex.NAP.Core.Business;

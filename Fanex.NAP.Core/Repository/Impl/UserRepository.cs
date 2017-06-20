@@ -1,13 +1,4 @@
-﻿// --------------------------------------------------------------------------
-// <copyright file="UserRepository.cs" company="Nexcel Solutions Vietnam">
-// Copyright (c) Nexcel Solutions Vietnam. All rights reserved.
-// </copyright>
-// --------------------------------------------------------------------------
-// <history>
-//   <change who="Anders.Le" date="2012.8.6">Created</change>
-// </history>
-
-namespace Fanex.NAP.Core.Repository.Impl
+﻿namespace Fanex.NAP.Core.Repository.Impl
 {
     using Fanex.Common.Extensions;
     using Fanex.Data;
@@ -192,7 +183,6 @@ namespace Fanex.NAP.Core.Repository.Impl
         /// </summary>
         /// <param name="criteria">The criteria.</param>
         /// <returns>List of user level.</returns>
-        [SuppressMessage("StyleCop.CSharp.Nexcel.NexcelCustomRules", "SP2101:MethodMustNotContainMoreLinesThan", Justification = "Reviewed. Suppression is OK here.")]
         public IEnumerable<UserLevel> Search(ICriteria criteria)
         {
             using (var db = new ObjectDb(criteria.GetSettingKey()))
@@ -350,7 +340,6 @@ namespace Fanex.NAP.Core.Repository.Impl
         /// </summary>
         /// <param name="criteria">The criteria.</param>
         /// <returns>List of user policy.</returns>
-        [SuppressMessage("StyleCop.CSharp.Nexcel.NexcelCustomRules", "SP2101:MethodMustNotContainMoreLinesThan", Justification = "Reviewed. Suppression is OK here.")]
         public IEnumerable<UserPolicy> GetUserPolicy(ICriteria criteria)
         {
             using (var db = new ObjectDb(criteria.GetSettingKey()))
@@ -460,7 +449,6 @@ namespace Fanex.NAP.Core.Repository.Impl
         /// </summary>
         /// <param name="reader">The data reader.</param>
         /// <returns>User level.</returns>
-        [SuppressMessage("StyleCop.CSharp.Nexcel.NexcelCustomRules", "SP2101:MethodMustNotContainMoreLinesThan", Justification = "Reviewed. Suppression is OK here.")]
         private UserLevel ReadUserLevel(IDataReader reader)
         {
             return new UserLevel

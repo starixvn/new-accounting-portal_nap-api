@@ -1,13 +1,4 @@
-﻿// --------------------------------------------------------------------------
-// <copyright file="LogExecSp.cs" company="Nexcel Solutions Vietnam">
-// Copyright (c) Nexcel Solutions Vietnam. All rights reserved.
-// </copyright>
-// --------------------------------------------------------------------------
-// <history>
-//   <change who="Edward.Nguyen" date="2012.11.14">Created</change>
-// </history>
-
-namespace Fanex.NAP.Core.Model.ValueObject
+﻿namespace Fanex.NAP.Core.Model.ValueObject
 {
     using System;
 

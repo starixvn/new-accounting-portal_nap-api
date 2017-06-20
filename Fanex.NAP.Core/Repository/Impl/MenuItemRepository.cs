@@ -1,29 +1,19 @@
-﻿// --------------------------------------------------------------------------
-// <copyright file="MenuItemRepository.cs" company="Nexcel Solutions Vietnam">
-// Copyright (c) Nexcel Solutions Vietnam. All rights reserved.
-// </copyright>
-// --------------------------------------------------------------------------
-// <history>
-//   <change who="Kos.Nguyen" date="2012.8.13">Created</change>
-// </history>
-
-namespace Fanex.NAP.Core.Repository.Impl
+﻿namespace Fanex.NAP.Core.Repository.Impl
 {
-    using Fanex.Common.Extensions;
-    using Fanex.Data;
-    using Fanex.Data.Repository;
-    using Fanex.NAP.Core.Command;
-    using Fanex.NAP.Core.Criteria.MenuItem;
-    using Fanex.NAP.Core.Criteria.Misc;
-    using Fanex.NAP.Core.Domain;
-    using Fanex.NAP.Core.Model;
-    using Fanex.NAP.Core.Repository.Interface;
     using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Data;
-    using System.Diagnostics.CodeAnalysis;
     using System.Linq;
+    using Command;
+    using Common.Extensions;
+    using Criteria.MenuItem;
+    using Criteria.Misc;
+    using Data;
+    using Data.Repository;
+    using Domain;
+    using Interface;
+    using Model;
 
     /// <summary>
     /// Menu item repository.
@@ -35,7 +25,6 @@ namespace Fanex.NAP.Core.Repository.Impl
         /// </summary>
         /// <param name="criteria">The criteria.</param>
         /// <returns>Menu item object.</returns>
-        [SuppressMessage("StyleCop.CSharp.Nexcel.NexcelCustomRules", "SP2101:MethodMustNotContainMoreLinesThan", Justification = "Reviewed. Suppression is OK here.")]
         public override IMenuItem Get(ICriteria criteria)
         {
             using (var db = new ObjectDb(criteria.GetSettingKey()))
@@ -107,7 +96,6 @@ namespace Fanex.NAP.Core.Repository.Impl
         /// </summary>
         /// <param name="criteria">The criteria.</param>
         /// <returns>List of menu item.</returns>
-        [SuppressMessage("StyleCop.CSharp.Nexcel.NexcelCustomRules", "SP2101:MethodMustNotContainMoreLinesThan", Justification = "Reviewed. Suppression is OK here.")]
         public override IEnumerable<IMenuItem> Fetch(ICriteria criteria)
         {
             using (var db = new ObjectDb(criteria.GetSettingKey()))

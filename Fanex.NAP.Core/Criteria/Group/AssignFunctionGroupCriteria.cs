@@ -1,14 +1,4 @@
-﻿// --------------------------------------------------------------------------
-// <copyright file="AssignFunctionGroupCriteria.cs" company="Nexcel Solutions Vietnam">
-// Copyright (c) Nexcel Solutions Vietnam. All rights reserved.
-// </copyright>
-// --------------------------------------------------------------------------
-// <history>
-//   <change who="Edward.Nguyen" date="2012.8.20">Created</change>
-//   <change who="Lewis.Le" date="2012.9.7">Added GroupName, SiteId</change>
-// </history>
-
-namespace Fanex.NAP.Core.Criteria.Group
+﻿namespace Fanex.NAP.Core.Criteria.Group
 {
     using Fanex.Data.Repository;
     using Fanex.NAP.Core.Web;

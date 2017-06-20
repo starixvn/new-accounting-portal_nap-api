@@ -1,13 +1,4 @@
-﻿// --------------------------------------------------------------------------
-// <copyright file="Function.cs" company="Nexcel Solutions Vietnam">
-// Copyright (c) Nexcel Solutions Vietnam. All rights reserved.
-// </copyright>
-// --------------------------------------------------------------------------
-// <history>
-//   <change who="Edward.Nguyen" date="2012.8.8">Created</change>
-// </history>
-
-namespace Fanex.NAP.Core.Model
+﻿namespace Fanex.NAP.Core.Model
 {
     using Fanex.NAP.Core.Business;
     using Fanex.NAP.Core.Domain;

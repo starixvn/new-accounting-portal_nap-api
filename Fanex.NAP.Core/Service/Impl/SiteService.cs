@@ -1,18 +1,4 @@
-﻿// --------------------------------------------------------------------------
-// <copyright file="SiteService.cs" company="Nexcel Solutions Vietnam">
-// Copyright (c) Nexcel Solutions Vietnam. All rights reserved.
-// </copyright>
-// --------------------------------------------------------------------------
-// <history>
-//   <change who="Anders.Le" date="2012.8.2">Created</change>
-//   <change who="Lewis.Le" date="2012.10.5">
-//      Added GetSiteUrlByUser
-//      Renamed GetByUser to GetSiteLevelByUser
-//   </change>
-//   <change who="Lewis.Le" date="2012.10.8">Added GetSiteUrlById</change>
-// </history>
-
-namespace Fanex.NAP.Core.Service.Impl
+﻿namespace Fanex.NAP.Core.Service.Impl
 {
     using Fanex.Common.Helper;
     using Fanex.NAP.Core.Business;

@@ -1,20 +1,10 @@
-﻿// --------------------------------------------------------------------------
-// <copyright file="InsertMenuItemCriteria.cs" company="Nexcel Solutions Vietnam">
-// Copyright (c) Nexcel Solutions Vietnam. All rights reserved.
-// </copyright>
-// --------------------------------------------------------------------------
-// <history>
-//   <change who="Kos.Nguyen" date="2012.8.16">Created</change>
-//   <change who="Edward.Nguyen" date="2012.8.28">Add properties Environment</change>
-// </history>
-
-namespace Fanex.NAP.Core.Criteria.MenuItem
+﻿namespace Fanex.NAP.Core.Criteria.MenuItem
 {
-    using Fanex.Data.Repository;
-    using Fanex.NAP.Core.Web;
     using System;
     using System.ComponentModel.DataAnnotations;
     using System.Diagnostics.CodeAnalysis;
+    using Data.Repository;
+    using Web;
 
     /// <summary>
     /// Insert new menu item criteria.

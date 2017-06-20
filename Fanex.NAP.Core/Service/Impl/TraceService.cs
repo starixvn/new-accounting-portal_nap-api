@@ -1,13 +1,4 @@
-﻿// --------------------------------------------------------------------------
-// <copyright file="TraceService.cs" company="Nexcel Solutions Vietnam">
-// Copyright (c) Nexcel Solutions Vietnam. All rights reserved.
-// </copyright>
-// --------------------------------------------------------------------------
-// <history>
-//   <change who="Edward.Nguyen" date="2012.11.14">Created</change>
-// </history>
-
-namespace Fanex.NAP.Core.Service.Impl
+﻿namespace Fanex.NAP.Core.Service.Impl
 {
     using Fanex.NAP.Core.Criteria.Trace;
     using Fanex.NAP.Core.Model.ValueObject;
@@ -42,7 +33,6 @@ namespace Fanex.NAP.Core.Service.Impl
         /// </summary>
         /// <param name="logId">Execute SP log ID.</param>
         /// <returns>Execute SP log.</returns>
-        [SuppressMessage("StyleCop.CSharp.Nexcel.NexcelCustomRules", "SP2101:MethodMustNotContainMoreLinesThan", Justification = "Reviewed. Suppression is OK here.")]
         [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Reviewed")]
         public LogExecSp GetById(int logId)
         {

@@ -1,13 +1,4 @@
-﻿// --------------------------------------------------------------------------
-// <copyright file="GetParentByIdMenuItemCriteria.cs" company="Nexcel Solutions Vietnam">
-// Copyright (c) Nexcel Solutions Vietnam. All rights reserved.
-// </copyright>
-// --------------------------------------------------------------------------
-// <history>
-//   <change who="Edward.Nguyen" date="2012.8.30">Created</change>
-// </history>
-
-namespace Fanex.NAP.Core.Criteria.MenuItem
+﻿namespace Fanex.NAP.Core.Criteria.MenuItem
 {
     using Fanex.Data.Repository;
 

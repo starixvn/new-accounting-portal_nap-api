@@ -1,10 +1,4 @@
-﻿// --------------------------------------------------------------------------
-// <copyright file="GlobalSuppressions.cs" company="Nexcel Solutions Vietnam">
-// Copyright (c) Nexcel Solutions Vietnam. All rights reserved.
-// </copyright>
-// --------------------------------------------------------------------------
-
-using System.Diagnostics.CodeAnalysis;
+﻿using System.Diagnostics.CodeAnalysis;
 
 [module: SuppressMessage(
     "Microsoft.Naming",

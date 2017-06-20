@@ -1,10 +1,4 @@
-﻿// -----------------------------------------------------------------------
-// <copyright file="UpdateSiteToUserCriteria.cs" company="Nexcel Solutions Viet Nam">
-// TODO: Update copyright text.
-// </copyright>
-// -----------------------------------------------------------------------
-
-namespace Fanex.NAP.Core.Criteria.User
+﻿namespace Fanex.NAP.Core.Criteria.User
 {
     using Fanex.Data.Repository;
     using System;

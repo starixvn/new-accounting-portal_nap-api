@@ -1,14 +1,4 @@
-﻿// --------------------------------------------------------------------------
-// <copyright file="IFunctionService.cs" company="Nexcel Solutions Vietnam">
-// Copyright (c) Nexcel Solutions Vietnam. All rights reserved.
-// </copyright>
-// --------------------------------------------------------------------------
-// <history>
-//   <change who="Anders.Le" date="2012.8.2">Created</change>
-//   <change who="Lewis.Le" date="2012.11.01">Added ICommandResult AssignFunction(AssignFunctionToUsersCriteria criteria)</change>
-// </history>
-
-namespace Fanex.NAP.Core.Service.Interface
+﻿namespace Fanex.NAP.Core.Service.Interface
 {
     using Fanex.NAP.Core.Business;
     using Fanex.NAP.Core.Command;
