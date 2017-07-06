@@ -3,6 +3,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Web.Http;
+    using Common.Extensions;
     using Core.Domain;
     using Core.Model.ValueObject;
     using Core.Service.Impl;
@@ -81,16 +82,31 @@
         }
 
         [HttpGet]
-        public IEnumerable<FunctionPolicy> FunctionPolicies(int userId, int siteId, int parentFunctionId, string environment)
+        public IEnumerable<FunctionPolicy> FunctionPolicies(int userId, int siteId, string parentFunctionKey, string environment)
         {
-            var functionPolicy = _functionService.GetByUserAndSiteIncludeGroup(userId, siteId, environment);
+            var functionPolicies = _functionService.GetByUserAndSiteIncludeGroup(userId, siteId, environment);
 
-            if (parentFunctionId == 0)
+            if (string.IsNullOrEmpty(parentFunctionKey))
             {
-                return functionPolicy;
+                return functionPolicies;
             }
 
-            return functionPolicy.Where(f => f.Function.Parent?.Id == parentFunctionId);
+            AssignParentFunctionKey(functionPolicies);
+
+            return functionPolicies.Where(f => f.Function.Parent?.Key == parentFunctionKey);
+        }
+
+        private void AssignParentFunctionKey(IEnumerable<FunctionPolicy> functionPolicies)
+        {
+            foreach (var functionPolicy in functionPolicies)
+            {
+                var parentFunction = functionPolicy.Function.Parent;
+
+                if (parentFunction != null)
+                {
+                    parentFunction.Key = _functionService.GetById(parentFunction.Id)?.Key;
+                }
+            }
         }
     }
 }
