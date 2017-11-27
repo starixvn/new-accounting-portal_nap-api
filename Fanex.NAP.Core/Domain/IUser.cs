@@ -1,8 +1,8 @@
 ﻿namespace Fanex.NAP.Core.Domain
 {
-    using Fanex.NAP.Core.Web;
     using System;
     using System.ComponentModel.DataAnnotations;
+    using Web;
 
     public interface IUser : IEntity<int, string>
     {
@@ -38,5 +38,7 @@
 
         [Display(Name = "Email", ResourceType = typeof(ViewResources))]
         string Email { get; set; }
+
+        bool Closed { get; set; }
     }
 }

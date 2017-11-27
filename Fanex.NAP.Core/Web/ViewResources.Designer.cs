@@ -358,6 +358,15 @@ namespace Fanex.NAP.Core.Web {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Closed.
+        /// </summary>
+        public static string Closed {
+            get {
+                return ResourceManager.GetString("Closed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Collapse list.
         /// </summary>
         public static string Collapse_list {

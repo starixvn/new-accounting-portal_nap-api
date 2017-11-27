@@ -19,6 +19,8 @@ namespace Fanex.NAP.Core.Criteria.User
 
         public int TotalRows { get; set; }
 
+        public int Status { get; set; }
+
         /// <summary>
         /// Get setting key.
         /// </summary>

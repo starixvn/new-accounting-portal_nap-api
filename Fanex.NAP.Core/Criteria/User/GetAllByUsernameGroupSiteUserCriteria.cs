@@ -1,6 +1,6 @@
 namespace Fanex.NAP.Core.Criteria.User
 {
-    using Fanex.Data.Repository;
+    using Data.Repository;
     using System.Collections.Generic;
     using System.Text;
     using System.Web.Mvc;
@@ -53,6 +53,8 @@ namespace Fanex.NAP.Core.Criteria.User
         public int PageSize { get; set; }
 
         public int TotalRows { get; set; }
+
+        public int Status { get; set; }
 
         /// <summary>
         /// Get setting key.

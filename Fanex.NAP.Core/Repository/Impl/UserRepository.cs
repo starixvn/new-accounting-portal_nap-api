@@ -235,7 +235,6 @@
                                 Id = reader.ToInt("ModifierIdUserSite"),
                                 Username = reader.ToString("ModifierUsernameUserSite")
                             },
-                            IsActive = reader.ToBool("IsActive"),
                             LastLoginDate = reader.ToDateTime("LastLoginDateUserSite")
                         });
                     }
@@ -493,13 +492,13 @@
                     Id = reader.ToInt("ModifierIdUserSite"),
                     Username = reader.ToString("ModifierUsernameUserSite")
                 },
-                IsActive = reader.ToBool("IsActive"),
                 LastLoginDate = reader.ToDateTime("LastLoginDateUserSite"),
                 Site = reader.IsDBNull("SiteId") ? null : new Site
                 {
                     Id = reader.ToByte("SiteId"),
                     Name = reader.ToString("SiteName")
-                }
+                },
+                Status = reader.ToInt("Status"),
             };
         }
     }

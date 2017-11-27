@@ -759,4 +759,7 @@
   <data name="Revoked_Sites" xml:space="preserve">
     <value>Revoked Sites</value>
   </data>
+  <data name="Closed" xml:space="preserve">
+    <value>Closed</value>
+  </data>
 </root>

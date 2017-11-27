@@ -107,5 +107,13 @@
             /// </summary>
             KickedOut = 2
         }
+
+        public enum UserStatus
+        {
+            All = 0,
+            Active = 1,
+            Inactive = 2,
+            Closed = 3
+        }
     }
 }

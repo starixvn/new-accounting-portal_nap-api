@@ -13,6 +13,8 @@
 
         public bool IsActive { get; set; }
 
+        public int Status { get; set; }
+
         public DateTime LastLoginDate { get; set; }
 
         public User Creator { get; set; }

@@ -1,7 +1,7 @@
 ﻿namespace Fanex.NAP.Core.Model
 {
-    using Fanex.NAP.Core.Domain;
-    using Fanex.NAP.Core.Web;
+    using Domain;
+    using Web;
     using System;
     using System.ComponentModel.DataAnnotations;
 
@@ -48,5 +48,7 @@
 
         [Display(Name = "Email", ResourceType = typeof(ViewResources))]
         public string Email { get; set; }
+
+        public bool Closed { get; set; }
     }
 }
