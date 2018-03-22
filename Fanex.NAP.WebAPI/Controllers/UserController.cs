@@ -96,6 +96,14 @@
             return functionPolicies.Where(f => f.Function.Parent?.Key == parentFunctionKey);
         }
 
+        [HttpGet]
+        public IEnumerable<UserPolicy> UserPolicies(string functionKey, int siteId)
+        {
+            var function = _functionService.GetByKeyAndSite(functionKey, siteId);
+
+            return _userService.GetByFunctionAndSite(function.Id, siteId);
+        }
+
         private void AssignParentFunctionKey(IEnumerable<FunctionPolicy> functionPolicies)
         {
             foreach (var functionPolicy in functionPolicies)
