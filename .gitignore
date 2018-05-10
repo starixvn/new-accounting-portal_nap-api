@@ -30,3 +30,4 @@ $tf*/
 Logs/
 .vs/config/applicationhost.config
 packages/
+.vs
