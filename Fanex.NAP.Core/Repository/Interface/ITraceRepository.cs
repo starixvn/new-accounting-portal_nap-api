@@ -12,8 +12,6 @@
 
         IQueryable<LogUserLogin> SearchLogUserLogin(GetAllLogUserLoginCriteria criteria);
 
-        IQueryable<LogFunction> SearchLogFunction(GetAllLogFunctionCriteria criteria);
-
         LogExecSp GetById(ICriteria criteria);
 
         ICommandResult InsertLog(ICriteria criteria);

@@ -88,27 +88,5 @@
                 return logList.AsQueryable();
             }
         }
-
-        /// <summary>
-        /// Search function log.
-        /// </summary>
-        /// <param name="criteria">The criteria.</param>
-        /// <returns>List of user login log.</returns>
-        public IQueryable<LogFunction> SearchLogFunction(GetAllLogFunctionCriteria criteria)
-        {
-            using (var db = new ObjectDb(criteria.GetSettingKey()))
-            {
-                Hashtable hash = criteria.GetSpParams();
-
-                var logList = db.Query<LogFunction, Function, User, Site, LogFunction>(
-                    (l, f, u, s) => { l.Function = f; l.User = u; l.Site = s; return l; },
-                    "FunctionId,UserId,SiteId",
-                    hash);
-
-                criteria.TotalRows = Convert.ToInt32(hash["totalrows"]);
-
-                return logList.AsQueryable();
-            }
-        }
     }
 }

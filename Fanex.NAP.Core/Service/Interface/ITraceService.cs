@@ -11,7 +11,5 @@
         IQueryable<LogExecSp> SearchExecSp(GetAllLogCriteria criteria);
 
         IQueryable<LogUserLogin> SearchUserLogin(GetAllLogUserLoginCriteria criteria);
-
-        IQueryable<LogFunction> SearchLogFunction(GetAllLogFunctionCriteria criteria);
     }
 }

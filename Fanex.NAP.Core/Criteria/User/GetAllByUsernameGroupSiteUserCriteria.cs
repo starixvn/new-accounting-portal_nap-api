@@ -56,6 +56,8 @@ namespace Fanex.NAP.Core.Criteria.User
 
         public int Status { get; set; }
 
+        public string Environment { get; set; }
+
         /// <summary>
         /// Get setting key.
         /// </summary>

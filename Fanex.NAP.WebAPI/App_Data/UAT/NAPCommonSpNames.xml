@@ -294,14 +294,4 @@
       <Mapping DataField="SiteName" ObjectProperty="Name" />
     </Setting>
   </Function>
-  <Function Name="LogFunction">
-    <Setting Key="NAP_LogFunction_Insert" SpName="NAP_LogFunction_Insert" DbName="DBNAP.bodb_NAP.bodbAdminNet" />
-    <Setting Key="NAP_LogFunction_Search" SpName="NAP_LogFunction_Search" DbName="DBNAP.bodb_NAP.bodbAdminNet">
-      <Mapping DataField="FunctionId" ObjectProperty="Id" />
-      <Mapping DataField="FunctionName" ObjectProperty="Name" />
-      <Mapping DataField="UserId" ObjectProperty="Id" />
-      <Mapping DataField="SiteId" ObjectProperty="Id" />
-      <Mapping DataField="SiteName" ObjectProperty="Name" />
-    </Setting>
-  </Function>
 </Functions>

@@ -201,21 +201,6 @@
         }
 
         /// <summary>
-        /// Search function log.
-        /// </summary>
-        /// <param name="criteria">The criteria.</param>
-        /// <returns>List of function log.</returns>
-        public IQueryable<LogFunction> SearchLogFunction(GetAllLogFunctionCriteria criteria)
-        {
-            if (criteria.IsValid())
-            {
-                return this._traceRepository.SearchLogFunction(criteria);
-            }
-
-            return null;
-        }
-
-        /// <summary>
         /// Decode xml of [f_EncodeXMLValue].
         /// </summary>
         /// <param name="value">XML value.</param>
