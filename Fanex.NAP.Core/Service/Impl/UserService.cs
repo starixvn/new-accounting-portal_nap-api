@@ -13,6 +13,7 @@
     using Criteria.User;
     using Data.Repository;
     using Domain;
+    using Fanex.Logging;
     using Interface;
     using Model.ValueObject;
     using Repository.Impl;
@@ -419,25 +420,32 @@
 
             if (criteria.IsValid())
             {
-                this._userRepository.UserCheckIn(criteria);
+                _userRepository.UserCheckIn(criteria);
 
-                var logCriteria = new InsertLogUserLoginCriteria
+                try
                 {
-                    UserId = criteria.UserId,
-                    SiteId = criteria.SiteId,
-                    LogDate = criteria.LoginDate,
-                    DomainName = criteria.Domain,
-                    BrowserName = criteria.BrowserName,
-                    Platform = criteria.Platform,
-                    Doing = criteria.Doing,
-                    IP = criteria.Ip,
-                    CountryCode = criteria.CountryCode,
-                    Duration = criteria.Duration
-                };
+                    var logCriteria = new InsertLogUserLoginCriteria
+                    {
+                        UserId = criteria.UserId,
+                        SiteId = criteria.SiteId,
+                        LogDate = criteria.LoginDate,
+                        DomainName = criteria.Domain,
+                        BrowserName = criteria.BrowserName,
+                        Platform = criteria.Platform,
+                        Doing = criteria.Doing,
+                        IP = criteria.Ip,
+                        CountryCode = criteria.CountryCode,
+                        Duration = criteria.Duration
+                    };
 
-                if (logCriteria.IsValid())
+                    if (logCriteria.IsValid())
+                    {
+                        _traceRepository.InsertLog(logCriteria);
+                    }
+                }
+                catch (Exception ex)
                 {
-                    this._traceRepository.InsertLog(logCriteria);
+                    Logger.Log.Error(ex.Message, ex);
                 }
             }
         }
