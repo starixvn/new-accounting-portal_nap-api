@@ -222,9 +222,21 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Global.asax" />
+    <None Include="Web.backupMNL.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
+    <None Include="Web.Local.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Local1.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Uat.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -254,17 +266,12 @@
     <Content Include="Web.ConnectionString.backupMNL.config">
       <DependentUpon>Web.ConnectionString.config</DependentUpon>
     </Content>
-    <Content Include="Web.backupMNL.config" />
-    <Content Include="Web.Debug.config">
+    <None Include="Web.Pro.config">
       <DependentUpon>Web.config</DependentUpon>
-    </Content>
-    <Content Include="Web.Local.config" />
-    <Content Include="Web.Pro.config" />
-    <Content Include="Web.Release.config">
+    </None>
+    <None Include="Web.Sit.config">
       <DependentUpon>Web.config</DependentUpon>
-    </Content>
-    <Content Include="Web.Sit.config" />
-    <Content Include="Web.Uat.config" />
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Fanex.NAP.Core\Fanex.NAP.Core.csproj">

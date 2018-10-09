@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Functions  SiteId="67" SiteName="NAP - System Configuration">
+<Functions>
   <Function Name="Site">
     <Setting Key="NAP_Site_InsertSiteURL" SpName="NAP_Site_InsertSiteURL" DbName="DBPOL.NAP_UserControl.bodbAdminNet"></Setting>
     <Setting Key="NAP_Site_InsertWithSiteURL" SpName="NAP_Site_InsertWithSiteURL" DbName="DBPOL.NAP_UserControl.bodbAdminNet"></Setting>
