@@ -498,14 +498,20 @@
                     Id = reader.ToByte("SiteId"),
                     Name = reader.ToString("SiteName")
                 },
-                Status = ColumnExists(reader, "Status") ? reader.ToInt("Status") : 0,
+                Status = TryGetColumnValue(reader, "Status", 0)
             };
         }
 
-        private static bool ColumnExists(IDataReader reader, string columnName)
-            => reader.GetSchemaTable()
-                .Rows
-                .OfType<DataRow>()
-                .Any(row => row["ColumnName"].ToString() == columnName);
+        private static T TryGetColumnValue<T>(IDataReader reader, string columnName, T defaultValue)
+        {
+            try
+            {
+                return reader.GetValue<T>(columnName);
+            }
+            catch
+            {
+                return defaultValue;
+            }
+        }
     }
 }
