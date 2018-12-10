@@ -42,8 +42,11 @@
             }
             else
             {
-                var responseObj = JsonConvert.DeserializeObject(actionExecutedContext.Response.Content.ReadAsStringAsync().Result);
-                messageBuilder.AppendFormat("ResponseData: {0}", responseObj?.ToString()).AppendLine();
+                if (actionExecutedContext.Response.Content != null)
+                {
+                    var responseObj = JsonConvert.DeserializeObject(actionExecutedContext.Response.Content?.ReadAsStringAsync().Result);
+                    messageBuilder.AppendFormat("ResponseData: {0}", responseObj?.ToString()).AppendLine();
+                }
             }
 
             Logger.Info(messageBuilder.ToString());
