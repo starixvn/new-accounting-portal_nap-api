@@ -260,6 +260,9 @@
     <Content Include="Web.ConnectionString.Sit.config">
       <DependentUpon>Web.ConnectionString.config</DependentUpon>
     </Content>
+	<Content Include="Web.ConnectionString.Sit2.config">
+      <DependentUpon>Web.ConnectionString.config</DependentUpon>
+    </Content>
     <Content Include="Web.ConnectionString.Local.config">
       <DependentUpon>Web.ConnectionString.config</DependentUpon>
     </Content>
@@ -275,6 +278,10 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Web.Sit.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+	<Content Include="Web.Sit2.config">
       <DependentUpon>Web.config</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
