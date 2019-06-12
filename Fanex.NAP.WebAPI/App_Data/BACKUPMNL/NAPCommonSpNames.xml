@@ -213,10 +213,10 @@
       <Mapping DataField="ModifierId" ObjectProperty="Id" />
       <Mapping DataField="ModifierUsername" ObjectProperty="Username" />
     </Setting>
-    <Setting Key="NAP_User_CheckIn" SpName="NAP_User_CheckIn" DbName="DBPOL.NAP_UserControl.bodbAdminNet" />
+    <Setting Key="NAP_User_CheckIn" SpName="NAP_User_CheckIn_MNL" DbName="DBPOL.NAP_UserControl.bodbAdminNet" />
     <Setting Key="NAP_User_ReCheckIn" SpName="NAP_User_ReCheckIn" DbName="DBPOL.NAP_UserControl.bodbAdminNet" />
-    <Setting Key="NAP_User_SSOCheckIn" SpName="NAP_User_SSOCheckIn" DbName="DBPOL.NAP_UserControl.bodbAdminNet" />
-    <Setting Key="NAP_User_Logout" SpName="Nap_User_Logout" DbName="DBPOL.NAP_UserControl.bodbAdminNet" />
+    <Setting Key="NAP_User_SSOCheckIn" SpName="NAP_User_SSOCheckIn_MNL" DbName="DBPOL.NAP_UserControl.bodbAdminNet" />
+    <Setting Key="NAP_User_Logout" SpName="Nap_User_Logout_MNL" DbName="DBPOL.NAP_UserControl.bodbAdminNet" />
     <Setting Key="NAP_User_GetUserSiteLevel" SpName="NAP_User_GetUserSiteLevel" DbName="DBPOL.NAP_UserControl.bodbAdminNet" />
     <Setting Key="NAP_User_GetUserFunctionPolicy" SpName="NAP_User_GetUserFunctionPolicy" DbName="DBPOL.NAP_UserControl.bodbAdminNet" />
     <Setting Key="NAP_User_GetUserSiteFunctionKeyPolicy" SpName="NAP_User_GetUserSiteFunctionKeyPolicy" DbName="DBPOL.NAP_UserControl.bodbAdminNet" />
@@ -287,7 +287,7 @@
     <Setting Key="NAP_LogExecSp_GetById" SpName="NAP_LogExecSp_GetById" DbName="DBNAP.bodb_NAPLOG.bodbAdminNet" />
   </Function>
   <Function Name="LogUserLogin">
-    <Setting Key="NAP_LogUserLogin_Insert" SpName="NAP_LogUserLogin_Insert" DbName="DBNAP.bodb_NAPLOG.bodbAdminNet" />
+    <Setting Key="NAP_LogUserLogin_Insert" SpName="NAP_LogUserLogin_Insert_MNL" DbName="DBNAP.bodb_NAPLOG.bodbAdminNet" />
     <Setting Key="NAP_LogUserLogin_Search" SpName="NAP_LogUserLogin_Search" DbName="DBNAP.bodb_NAPLOG.bodbAdminNet">
       <Mapping DataField="UserId" ObjectProperty="Id" />
       <Mapping DataField="SiteId" ObjectProperty="Id" />
