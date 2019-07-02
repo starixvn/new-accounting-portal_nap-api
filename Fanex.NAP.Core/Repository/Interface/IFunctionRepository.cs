@@ -15,6 +15,8 @@
 
         ICommandResult Duplicate(DuplicateFunctionCriteria criteria, ICriteria logCriteria);
 
+        ICommandResult CopyPermission(CopyPermissionCriteria criteria, ICriteria logCriteria);
+
         ICommandResult Insert(InsertFunctionCriteria criteria, ICriteria logCriteria);
 
         ICommandResult Update(ICriteria criteria, ICriteria logCriteria);

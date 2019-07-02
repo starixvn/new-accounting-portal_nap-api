@@ -80,6 +80,8 @@
         /// <returns>Command result.</returns>
         ICommandResult Duplicate(DuplicateFunctionCriteria criteria);
 
+        ICommandResult CopyPermission(CopyPermissionCriteria criteria);
+
         /// <summary>
         /// Inserts function and assigns it to all site admin of the current site and all portal admin.
         /// </summary>

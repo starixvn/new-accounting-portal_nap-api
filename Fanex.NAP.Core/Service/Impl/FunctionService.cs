@@ -649,6 +649,23 @@
             return null;
         }
 
+        public ICommandResult CopyPermission(CopyPermissionCriteria criteria)
+        {
+            Check.Argument.IsNotNull(criteria, "criteria");
+
+            if (criteria.IsValid())
+            {
+                LogExecSpCriteria logCriteria = GetLogExecSpCriteria();
+
+                if (criteria.IsValid() && logCriteria.IsValid())
+                {
+                    return this._functionRepository.CopyPermission(criteria, logCriteria);
+                }
+            }
+
+            return null;
+        }
+
         /// <summary>
         /// Insert function.
         /// </summary>

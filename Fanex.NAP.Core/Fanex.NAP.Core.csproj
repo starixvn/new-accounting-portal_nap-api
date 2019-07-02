@@ -119,6 +119,7 @@
     <Compile Include="Configuration\NapSettings.cs" />
     <Compile Include="Criteria\Function\AssignFunctionToUsersCriteria.cs" />
     <Compile Include="Criteria\Function\AssignFunctionToGroupsCriteria.cs" />
+    <Compile Include="Criteria\Function\CopyPermissionCriteria.cs" />
     <Compile Include="Criteria\Function\DuplicateFunctionCriteria.cs" />
     <Compile Include="Criteria\Function\GetByGroupAndSiteFunctionCriteria.cs" />
     <Compile Include="Criteria\Function\GetByParentKeyAndSiteCriteria.cs" />

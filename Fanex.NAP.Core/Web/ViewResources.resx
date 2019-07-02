@@ -762,4 +762,10 @@
   <data name="Closed" xml:space="preserve">
     <value>Closed</value>
   </data>
+  <data name="CopyPermissionSuccessMsg" xml:space="preserve">
+    <value>{0} has been copied permission successfully. You will be redirected in &lt;span class='msec'&gt;{1}&lt;/span&gt; seconds.</value>
+  </data>
+  <data name="Copy_Permission" xml:space="preserve">
+    <value>Copy Permission</value>
+  </data>
 </root>

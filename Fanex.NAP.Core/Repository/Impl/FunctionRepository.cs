@@ -217,6 +217,21 @@
             }
         }
 
+        public ICommandResult CopyPermission(CopyPermissionCriteria criteria, ICriteria logCriteria)
+        {
+            Hashtable hash = criteria.GetSpParams();
+
+            hash = logCriteria.AddSpParams(hash);
+            hash = (new ResultCriteria()).AddSpParams(hash);
+
+            using (var db = new ObjectDb(criteria.GetSettingKey()))
+            {
+                db.ExecuteNonQuery(hash);
+
+                return this.GetCommandResult(hash);
+            }
+        }
+
         /// <summary>
         /// Insert function.
         /// </summary>
