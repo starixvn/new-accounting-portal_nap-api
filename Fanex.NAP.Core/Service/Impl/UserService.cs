@@ -597,10 +597,9 @@
         /// <param name="functionId">The function ID.</param>
         /// <param name="siteId">The site ID.</param>
         /// <returns>List of user policy.</returns>
-        public IEnumerable<UserPolicy> GetByFunctionAndSite(int functionId, int siteId)
+        public IEnumerable<UserPolicy> GetByFunctionAndSite(int functionId, int siteId = 0)
         {
             Check.Argument.IsNotNegativeOrZero(functionId, "functionid");
-            Check.Argument.IsNotNegativeOrZero(siteId, "siteid");
 
             var criteria = new GetByFunctionAndSiteUserCriteria
             {
@@ -615,6 +614,7 @@
 
             return null;
         }
+
 
         /// <summary>
         /// Get user list site function key policy.

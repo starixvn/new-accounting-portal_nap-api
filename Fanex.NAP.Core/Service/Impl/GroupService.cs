@@ -1,5 +1,8 @@
 ﻿namespace Fanex.NAP.Core.Service.Impl
 {
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Web.Mvc;
     using Fanex.Common.Helper;
     using Fanex.NAP.Core.Business;
     using Fanex.NAP.Core.Command;
@@ -10,9 +13,6 @@
     using Fanex.NAP.Core.Repository.Impl;
     using Fanex.NAP.Core.Repository.Interface;
     using Fanex.NAP.Core.Service.Interface;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Web.Mvc;
 
     /// <summary>
     /// Group service.
@@ -254,11 +254,9 @@
         /// <param name="functionId">The function ID.</param>
         /// <param name="siteId">The site ID.</param>
         /// <returns>List of group policy.</returns>
-        public IEnumerable<GroupPolicy> GetByFunctionAndSite(int functionId, int siteId)
+        public IEnumerable<GroupPolicy> GetByFunctionAndSite(int functionId, int siteId = 0)
         {
             Check.Argument.IsNotNegativeOrZero(functionId, "functionid");
-            Check.Argument.IsNotNegativeOrZero(siteId, "siteid");
-
             var criteria = new GetByFunctionAndSiteGroupCriteria
             {
                 FunctionId = functionId,

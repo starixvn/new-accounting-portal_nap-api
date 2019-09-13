@@ -1,16 +1,16 @@
 ﻿namespace Fanex.NAP.Core.Service.Interface
 {
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
+    using System.Linq;
+    using System.Web.Mvc;
     using Fanex.Data.Repository;
     using Fanex.NAP.Core.Business;
     using Fanex.NAP.Core.Command;
     using Fanex.NAP.Core.Criteria.User;
     using Fanex.NAP.Core.Domain;
     using Fanex.NAP.Core.Model.ValueObject;
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Diagnostics.CodeAnalysis;
-    using System.Linq;
-    using System.Web.Mvc;
 
     public interface IUserService : IBaseService
     {
@@ -23,7 +23,7 @@
         [SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate", Justification = "Reviewed")]
         IEnumerable<IUser> GetAll();
 
-        IEnumerable<UserPolicy> GetByFunctionAndSite(int functionId, int siteId);
+        IEnumerable<UserPolicy> GetByFunctionAndSite(int functionId, int siteId = 0);
 
         IEnumerable<IUser> GetBySite(int siteId = 0, bool? isActive = null);
 

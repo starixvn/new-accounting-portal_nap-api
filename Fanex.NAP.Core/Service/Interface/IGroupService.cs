@@ -1,12 +1,12 @@
 ﻿namespace Fanex.NAP.Core.Service.Interface
 {
+    using System.Collections.Generic;
+    using System.Web.Mvc;
     using Fanex.NAP.Core.Business;
     using Fanex.NAP.Core.Command;
     using Fanex.NAP.Core.Criteria.Group;
     using Fanex.NAP.Core.Domain;
     using Fanex.NAP.Core.Model.ValueObject;
-    using System.Collections.Generic;
-    using System.Web.Mvc;
 
     public interface IGroupService : IBaseService
     {
@@ -30,7 +30,7 @@
 
         IList<SelectListItem> GetAllSelectListItem(bool? isActive = null, int selectedGroupId = 0);
 
-        IEnumerable<GroupPolicy> GetByFunctionAndSite(int functionId, int siteId);
+        IEnumerable<GroupPolicy> GetByFunctionAndSite(int functionId, int siteId = 0);
 
         IEnumerable<IGroup> GetAllWithNumOfUser(string name, string env = Constant.Uat, bool? isActive = null);
 
