@@ -1,9 +1,9 @@
 ﻿namespace Fanex.NAP.WebAPI
 {
+    using System.Web.Http;
     using Fanex.NAP.WebAPI.Configurations;
     using Fanex.NAP.WebAPI.Filters;
     using log4net.Config;
-    using System.Web.Http;
 
     public static class WebApiConfig
     {
