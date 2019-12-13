@@ -1,0 +1,5 @@
+\\Logs
+packages.config
+package.json
+tsconfig.json
+tslint.json

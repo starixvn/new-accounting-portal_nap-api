@@ -212,6 +212,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="App_Data\Fanex.Data\SpNames.MNL.xml" />
     <Content Include="App_Data\Fanex.Data\SpNames.xml" />
     <Content Include="Global.asax" />
     <Content Include="Web.backupMNL.config">
@@ -239,6 +240,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Fanex.NAP.WebAPI.ruleset" />
+    <Content Include="deployment.ignore" />
     <None Include="Properties\PublishProfiles\Fanex.NAP.API.pubxml" />
     <Content Include="Web.ConnectionString.config">
       <SubType>Designer</SubType>
