@@ -526,7 +526,6 @@
         public IEnumerable<SiteUrl> GetSiteUrlBySiteId(int siteId, string env)
         {
             Check.Argument.IsNotNegativeOrZero(siteId, "siteId");
-            Check.Argument.IsNotEmpty(env, "Environment");
 
             var result = new List<SiteUrl>();
 
