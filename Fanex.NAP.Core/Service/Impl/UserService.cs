@@ -421,27 +421,23 @@
             if (criteria.IsValid())
             {
                 _userRepository.UserCheckIn(criteria);
+                var logCriteria = new InsertLogUserLoginCriteria
+                {
+                    UserId = criteria.UserId,
+                    SiteId = criteria.SiteId,
+                    LogDate = criteria.LoginDate,
+                    DomainName = criteria.Domain,
+                    BrowserName = criteria.BrowserName,
+                    Platform = criteria.Platform,
+                    Doing = criteria.Doing,
+                    IP = criteria.Ip,
+                    CountryCode = criteria.CountryCode,
+                    Duration = criteria.Duration
+                };
 
                 try
                 {
-                    var logCriteria = new InsertLogUserLoginCriteria
-                    {
-                        UserId = criteria.UserId,
-                        SiteId = criteria.SiteId,
-                        LogDate = criteria.LoginDate,
-                        DomainName = criteria.Domain,
-                        BrowserName = criteria.BrowserName,
-                        Platform = criteria.Platform,
-                        Doing = criteria.Doing,
-                        IP = criteria.Ip,
-                        CountryCode = criteria.CountryCode,
-                        Duration = criteria.Duration
-                    };
-
-                    if (logCriteria.IsValid())
-                    {
-                        _traceRepository.InsertLog(logCriteria);
-                    }
+                    _traceRepository.InsertLog(logCriteria);
                 }
                 catch (Exception ex)
                 {
@@ -486,28 +482,29 @@
         {
             Check.Argument.IsNotNull(criteria, "criteria");
 
-            if (criteria.IsValid())
+            this._userRepository.UserSSOCheckIn(criteria);
+
+            var logCriteria = new InsertLogUserLoginCriteria
             {
-                this._userRepository.UserSSOCheckIn(criteria);
+                UserId = criteria.UserId,
+                SiteId = criteria.SiteId,
+                LogDate = criteria.LoginDate,
+                DomainName = criteria.Domain,
+                BrowserName = criteria.BrowserName,
+                Platform = criteria.Platform,
+                Doing = criteria.Doing,
+                IP = criteria.IP,
+                CountryCode = criteria.CountryCode,
+                Duration = criteria.Duration
+            };
 
-                var logCriteria = new InsertLogUserLoginCriteria
-                {
-                    UserId = criteria.UserId,
-                    SiteId = criteria.SiteId,
-                    LogDate = criteria.LoginDate,
-                    DomainName = criteria.Domain,
-                    BrowserName = criteria.BrowserName,
-                    Platform = criteria.Platform,
-                    Doing = criteria.Doing,
-                    IP = criteria.IP,
-                    CountryCode = criteria.CountryCode,
-                    Duration = criteria.Duration
-                };
-
-                if (logCriteria.IsValid())
-                {
-                    this._traceRepository.InsertLog(logCriteria);
-                }
+            try
+            {
+                this._traceRepository.InsertLog(logCriteria);
+            }
+            catch (Exception ex)
+            {
+                Logger.Log.Error(ex.Message, ex);
             }
         }
 
