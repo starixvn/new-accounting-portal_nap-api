@@ -142,6 +142,7 @@
         {
             if (MemoryCache.Default.Contains(nonce))
             {
+                Fanex.Logging.Logger.Log.Info("MemoryCache.Default.Contains(nonce)");
                 return true;
             }
 
@@ -150,9 +151,11 @@
 
             var serverTotalSeconds = Convert.ToUInt64(currentTimeSpan.TotalSeconds);
             var requestTotalSeconds = Convert.ToUInt64(requestTimeStamp);
-
-            if (((long)serverTotalSeconds - (long)requestTotalSeconds) > RequestMaxAgeInSeconds)
+            var deltaRequestSeconds = ((long)serverTotalSeconds - (long)requestTotalSeconds);
+            if (deltaRequestSeconds > RequestMaxAgeInSeconds)
             {
+                Fanex.Logging.Logger.Log.Info($"deltaRequestSeconds:{deltaRequestSeconds}. serverTotalSeconds:{serverTotalSeconds}.requestTotalSeconds:{requestTotalSeconds}.RequestMaxAgeInSeconds:{RequestMaxAgeInSeconds}");
+                Fanex.Logging.Logger.Log.Info($"serverTime:{DateTime.UtcNow}. clientTime:{epochStart.AddSeconds(requestTotalSeconds)}");
                 return true;
             }
 
