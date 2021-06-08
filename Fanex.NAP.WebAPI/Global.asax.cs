@@ -1,13 +1,15 @@
-﻿namespace Fanex.NAP.WebAPI
+﻿using Fanex.Logging;
+using Fanex.NAP.WebAPI.App_Start;
+
+namespace Fanex.NAP.WebAPI
 {
+    using Fanex.Data.Configuration;
+    using Newtonsoft.Json.Serialization;
     using System;
     using System.Data.SqlClient;
     using System.Web.Http;
     using System.Web.Mvc;
     using System.Web.Routing;
-    using Fanex.Data.Configuration;
-    using Fanex.Logging;
-    using Newtonsoft.Json.Serialization;
 
     // Note: For instructions on enabling IIS6 or IIS7 classic mode,
     // visit http://go.microsoft.com/?LinkId=9394801
@@ -15,12 +17,12 @@
     {
         protected void Application_Start()
         {
+            FanexLogging.Register();
             AreaRegistration.RegisterAllAreas();
 
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-
             DbSettingProviderManager.Current.Start();
             GlobalConfiguration.Configuration.Formatters.XmlFormatter.SupportedMediaTypes.Clear();
             ((DefaultContractResolver)GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings.ContractResolver).IgnoreSerializableAttribute = true;
