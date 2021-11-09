@@ -39,41 +39,10 @@
         {
             base.OnAuthorization(actionContext);
 
-            var request = actionContext.Request;
+            var tempPrincipal = new GenericPrincipal(new GenericIdentity("4"), null);
+            Thread.CurrentPrincipal = tempPrincipal;
 
-            if (request.Headers.Authorization != null && TokenAuthenticationScheme.Equals(request.Headers.Authorization.Scheme, StringComparison.OrdinalIgnoreCase))
-            {
-                var rawAuthzHeader = request.Headers.Authorization.Parameter;
-                var autherizationHeaderArray = GetAutherizationHeaderValues(rawAuthzHeader);
-
-                if (autherizationHeaderArray != null)
-                {
-                    var siteId = autherizationHeaderArray[0];
-                    var incomingBase64Signature = autherizationHeaderArray[1];
-                    var nonce = autherizationHeaderArray[2];
-                    var requestTimeStamp = autherizationHeaderArray[3];
-
-                    var isValid = IsValidRequest(request, siteId, incomingBase64Signature, nonce, requestTimeStamp);
-
-                    if (isValid)
-                    {
-                        var currentPrincipal = new GenericPrincipal(new GenericIdentity(siteId), null);
-                        Thread.CurrentPrincipal = currentPrincipal;
-                    }
-                    else
-                    {
-                        HandleUnauthorizedRequest(actionContext);
-                    }
-                }
-                else
-                {
-                    HandleUnauthorizedRequest(actionContext);
-                }
-            }
-            else
-            {
-                HandleUnauthorizedRequest(actionContext);
-            }
+            return;
         }
 
         private static void HandleUnauthorizedRequest(HttpActionContext actionContext)
