@@ -1,5 +1,6 @@
 ﻿namespace Fanex.NAP.WebAPI.Controllers
 {
+    using System.Linq;
     using System.Web.Http;
     using Core.Criteria.User;
     using Core.Service.Impl;
@@ -20,11 +21,22 @@
         }
 
         [HttpPost]
-        public int Login([FromBody]UserCheckInUserCriteria criteria)
+        public int Login([FromBody] UserCheckInUserCriteria criteria)
         {
             _userService.UserCheckIn(criteria);
 
+            SiteLogger.Sites.Add(criteria.SiteId);
+
             return criteria.OnUserId;
+        }
+
+        [HttpGet]
+        public string WorkingSites()
+        {
+            var siteService = new SiteService();
+            var sites = SiteLogger.Sites.Select(s => siteService.GetById(s).Name);
+
+            return string.Join(",", sites);
         }
     }
 }

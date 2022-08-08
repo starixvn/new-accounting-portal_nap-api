@@ -26,9 +26,10 @@
         }
 
         [HttpPost]
-        public int Login([FromBody]UserSSOCheckInUserCriteria criteria)
+        public int Login([FromBody] UserSSOCheckInUserCriteria criteria)
         {
             _userService.UserSSOCheckIn(criteria);
+            SiteLogger.Sites.Add(criteria.SiteId);
 
             return criteria.OnUserId;
         }
